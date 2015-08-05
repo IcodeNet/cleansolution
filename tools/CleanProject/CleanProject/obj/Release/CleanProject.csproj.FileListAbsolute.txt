@@ -1,0 +1,8 @@
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\CleanProject\bin\Release\CleanProject.exe
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\CleanProject\bin\Release\CleanProject.pdb
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\CleanProject\bin\Release\CmdLine.dll
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\CleanProject\bin\Release\Ionic.Zip.dll
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\CleanProject\bin\Release\CmdLine.pdb
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\CleanProject\obj\Release\CleanProject.csprojResolveAssemblyReference.cache
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\CleanProject\obj\Release\CleanProject.exe
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\CleanProject\obj\Release\CleanProject.pdb

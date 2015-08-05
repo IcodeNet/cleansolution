@@ -1,0 +1,1 @@
+﻿dir .\Nuget.TestSource\*.nupkg -Exclude *.symbols.nupkg | foreach {nuget push $_.FullName }

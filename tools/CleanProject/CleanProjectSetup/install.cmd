@@ -1,0 +1,1 @@
+msiexec /i bin\release\cleanproject.msi /l log.txt

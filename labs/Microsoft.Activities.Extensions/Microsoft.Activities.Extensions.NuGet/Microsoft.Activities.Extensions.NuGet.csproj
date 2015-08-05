@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Contracts|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug Contracts\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NET40;NET40_OR_GREATER</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\NET40\Microsoft.Activities.Extensions.NuGet.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC81735D-FF53-4995-97ED-2EC93366BAA6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Activities.Extensions.NuGet</RootNamespace>
+    <AssemblyName>Microsoft.Activities.Extensions.NuGet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <CustomBeforeMicrosoftCommonTargets>$(LabDir)\MultiVersion.targets</CustomBeforeMicrosoftCommonTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Microsoft.Activities.Extensions.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop" />
+    <Reference Include="Microsoft.VisualStudio.Shell.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Management.Automation" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\labsversion.cs">
+      <Link>Properties\labsversion.cs</Link>
+    </Compile>
+    <Compile Include="AddActivityToolboxCmdlet.cs" />
+    <Compile Include="AssemblyLoadWorker.cs" />
+    <Compile Include="RemoveToolboxTabCmdlet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package\Microsoft.Activities.Extensions.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Microsoft.Activities.Extensions.snk" />
+    <None Include="Package\tools\install.ps1" />
+    <None Include="Package\tools\uninstall.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Microsoft.Activities.Extensions.Screenshot.png" />
+    <Content Include="Images\WF100x100.png" />
+    <None Include="Resources\dbGreenCheck16.png" />
+    <None Include="Resources\LoadArrow16.png" />
+    <None Include="Resources\diagtrace.bmp" />
+    <None Include="Resources\bookmark.bmp" />
+    <None Include="Resources\ValExistsDict.bmp" />
+    <None Include="Resources\RemoveDict.bmp" />
+    <None Include="Resources\LoadAndInvoke.bmp" />
+    <None Include="Resources\InvokeWorkflow.bmp" />
+    <None Include="Resources\ExistsDict.bmp" />
+    <None Include="Resources\DictGet.bmp" />
+    <None Include="Resources\DelayCheck.bmp" />
+    <None Include="Resources\ClearDict.bmp" />
+    <None Include="Resources\AddToDict.bmp" />
+    <None Include="Resources\Activity.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Package\Help\" />
+    <Folder Include="Package\lib\Net401\" />
+    <Folder Include="Package\lib\Net40\" />
+    <Folder Include="Package\lib\Net45\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(ProjectDir)Package\tools</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="BeforeBuild">
+    <PropertyGroup>
+      <ProjectName>Microsoft.Activities.Extensions</ProjectName>
+      <AssemblyProjectDir>$(LABDIR)\$(ProjectName)</AssemblyProjectDir>
+      <SourceCodeDir>$(LABDIR)\$(ProjectName)\$(ProjectName)</SourceCodeDir>
+      <DesignSourceCodeDir>$(LABDIR)\$(ProjectName)\$(ProjectName).Design</DesignSourceCodeDir>
+      <PackageDir>$(AssemblyProjectDir)\$(ProjectName).NuGet\Package</PackageDir>
+      <LibDir>$(PackageDir)\lib</LibDir>
+      <HelpDir>$(PackageDir)\help</HelpDir>
+      <Lib401Dir>$(LibDir)\Net401</Lib401Dir>
+      <Lib45Dir>$(LibDir)\Net45</Lib45Dir>
+      <Lib40Dir>$(LibDir)\Net40</Lib40Dir>
+      <AssemblySourceDir>$(AssemblyProjectDir)\$(ProjectName)\bin\$(Configuration)</AssemblySourceDir>
+      <NugetTestSource>$(LABDIR)\NuGet.TestSource</NugetTestSource>
+      <TF>"$(VS110COMNTOOLS)..\IDE\tf.exe"</TF>
+    </PropertyGroup>
+    <ItemGroup>
+      <Net40Assemblies Include="$(AssemblySourceDir)\NET40\**\*.dll" />
+      <Net40Symbols Include="$(AssemblySourceDir)\NET40\**\*.pdb" />
+      <Net401Assemblies Include="$(AssemblySourceDir)\NET401\**\*.dll" />
+      <Net45Assemblies Include="$(AssemblySourceDir)\NET45\**\*.dll" />
+      <Net401Symbols Include="$(AssemblySourceDir)\NET401\**\*.pdb" />
+      <Net45Symbols Include="$(AssemblySourceDir)\NET45\**\*.pdb" />
+      <SourceCodeFiles Include="$(SourceCodeDir)\**\*.cs" Exclude="$(SourceCodeDir)\**\*.g*.cs; $(SourceCodeDir)\obj\**\*.*; $(SourceCodeDir)\bin\**\*.*" />
+      <SourceCodeFiles Include="$(SourceCodeDir)\**\*.xaml" Exclude="$(SourceCodeDir)\**\*.g*.xaml" />
+      <SourceCodeFiles Include="$(SourceCodeDir)\**\*.bmp" />
+      <SourceCodeFiles Include="$(SourceCodeDir)\**\*.png" />
+      <DesignSourceCodeFiles Include="$(DesignSourceCodeDir)\**\*.cs" Exclude="$(SourceCodeDir)\**\*.g*.cs; $(SourceCodeDir)\obj\**\*.*; $(SourceCodeDir)\bin\**\*.*" />
+      <DesignSourceCodeFiles Include="$(DesignSourceCodeDir)\**\*.xaml" />
+      <DesignSourceCodeFiles Include="$(DesignSourceCodeDir)\**\*.bmp" />
+      <DesignSourceCodeFiles Include="$(DesignSourceCodeDir)\**\*.png" />
+      <HelpFiles Include="$(AssemblyProjectDir)\Help\**\*.chm" />
+    </ItemGroup>
+    <Message Text="Removing the package directories" />
+    <RemoveDir Directories="$(Lib40Dir);$(Lib401Dir);$(Lib45Dir);$(HelpDir);$(PackageDir)\src" />
+    <Message Text="Creating the package directories" />
+    <MakeDir Directories="$(NugetTestSource);$(Lib40Dir);$(Lib401Dir);$(Lib45Dir);$(HelpDir);$(PackageDir)\src" />
+    <!-- Copy the source files for symbols -->
+    <Message Text="Copying the source code files" />
+    <Copy SourceFiles="@(SourceCodeFiles)" DestinationFiles="@(SourceCodeFiles->'$(PackageDir)\src\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Text="Copying the designer source code files" />
+    <Copy SourceFiles="@(DesignSourceCodeFiles)" DestinationFiles="@(DesignSourceCodeFiles->'$(PackageDir)\src\$(ProjectName).Design\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Text="Copying the NET40 Assemblies" />
+    <Copy SourceFiles="@(Net40Assemblies);@(Net40Symbols)" DestinationFolder="$(Lib40Dir)" />
+    <Message Text="Copying the NET401 Assemblies" />
+    <Copy SourceFiles="@(Net401Assemblies);@(Net401Symbols)" DestinationFolder="$(Lib401Dir)" />
+    <Message Text="Copying the NET45 Assemblies" />
+    <Copy SourceFiles="@(Net45Assemblies);@(Net45Symbols)" DestinationFolder="$(Lib45Dir)" />
+    <Message Text="Copying the Help files" />
+    <Copy SourceFiles="@(HelpFiles)" DestinationFolder="$(HelpDir)" />
+    <!-- Get the version number of the main assembly to insert into the nuspec files -->
+    <Message Text="Getting the assembly identity from the NET40 assembly" />
+    <GetAssemblyIdentity AssemblyFiles="$(Lib40Dir)\$(ProjectName).dll">
+      <Output TaskParameter="Assemblies" ItemName="AsmInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Checking out the nuspec file" />
+    <Exec Command="$(TF) checkout $(ProjectName).nuspec" WorkingDirectory="$(PackageDir)" />
+    <!-- insert the version number into the nuspec files -->
+    <Message Text="Updating the version number in the nuspec file" />
+    <XmlUpdate Namespace="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd" Prefix="n" XmlFileName="$(PackageDir)\$(ProjectName).nuspec" XPath="/n:package/n:metadata/n:version" Value="%(AsmInfo.Version)" />
+    <!-- Delete any previous packages -->
+    <Message Text="Deleting the previous packages" />
+    <!--<Delete Files="$(NugetTestSource)\$(ProjectName)$(AsmInfo.Version).nupkg" />-->
+    <Delete Files="$(NugetTestSource)\$(ProjectName)*.nupkg" />
+    <Delete Files="$(NugetTestSource)\$(ProjectName)*.symbols.nupkg" />
+  </Target>
+  <Target Name="AfterBuild">
+    <Message Text="Building the NuGet Package and publishing to Test Source" />
+    <Exec WorkingDirectory="$(PackageDir)" Command="nuget.exe pack $(PackageDir)\$(ProjectName).nuspec -symbols -outputDirectory $(NugetTestSource) -NoPackageAnalysis" />
+  </Target>
+</Project>

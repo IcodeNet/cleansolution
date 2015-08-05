@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C763D7B-66E4-4D0E-915D-81580D668B47}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Activities.Extensions.Design</RootNamespace>
+    <AssemblyName>Microsoft.Activities.Extensions.Design</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <CustomBeforeMicrosoftCommonTargets>$(LabDir)\MultiVersion.targets</CustomBeforeMicrosoftCommonTargets>
+    <!---->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Microsoft.Activities.Extensions\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Microsoft.Activities.Extensions\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Microsoft.Activities.Extensions.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\LabsAssemblyInfo.cs" />
+    <Compile Include="RemoveFromDictionaryDesigner.xaml.cs">
+      <DependentUpon>RemoveFromDictionaryDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ValueExistsInDictionaryDesigner.xaml.cs">
+      <DependentUpon>ValueExistsInDictionaryDesigner.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddToDictionaryDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ClearDictionaryDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DelayUntilDateTimeDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GetFromDictionaryDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KeyExistsInDictionaryDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoadActivityDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoadAndInvokeWorkflowDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DelayUntilTimeDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="..\..\labsversion.cs">
+      <Link>Properties\labsversion.cs</Link>
+    </Compile>
+    <Compile Include="AddToDictionaryDesigner.xaml.cs">
+      <DependentUpon>AddToDictionaryDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClearDictionaryDesigner.xaml.cs">
+      <DependentUpon>ClearDictionaryDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DelayUntilDateTimeDesigner.xaml.cs">
+      <DependentUpon>DelayUntilDateTimeDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GetFromDictionaryDesigner.xaml.cs">
+      <DependentUpon>GetFromDictionaryDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KeyExistsInDictionaryDesigner.xaml.cs">
+      <DependentUpon>KeyExistsInDictionaryDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadActivityDesigner.xaml.cs">
+      <DependentUpon>LoadActivityDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadAndInvokeWorkflowDesigner.xaml.cs">
+      <DependentUpon>LoadAndInvokeWorkflowDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DelayUntilTimeDesigner.xaml.cs">
+      <DependentUpon>DelayUntilTimeDesigner.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="InvokeWorkflowDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadAssemblyDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RemoveFromDictionaryDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ValueExistsInDictionaryDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DelayUntilTimeViewModel.cs" />
+    <Compile Include="DesignerMetadata.cs" />
+    <Compile Include="InvokeWorkflowDesigner.xaml.cs">
+      <DependentUpon>InvokeWorkflowDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadAssemblyDesigner.xaml.cs">
+      <DependentUpon>LoadAssemblyDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedDayOfWeekExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Microsoft.Activities.Extensions.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DelayCheck.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\InvokeWorkflow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoadAndInvoke.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddToDict.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClearDict.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DictGet.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ExistsDict.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RemoveDict.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ValExistsDict.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Activity.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoadArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoadArrow16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dbGreenCheck16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dbGreenCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Activities.Extensions\Microsoft.Activities.Extensions.NET45.csproj">
+      <Project>{d2915d80-7da6-45a0-9f96-0ca8c94b5c3e}</Project>
+      <Name>Microsoft.Activities.Extensions.NET45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

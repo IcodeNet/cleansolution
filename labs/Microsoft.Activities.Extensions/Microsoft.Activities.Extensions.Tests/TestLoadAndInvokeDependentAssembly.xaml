@@ -1,0 +1,32 @@
+﻿<Activity mc:Ignorable="sap" x:Class="Microsoft.Activities.Extensions.Tests.TestLoadAndInvokeDependentAssembly" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mas="clr-namespace:Microsoft.Activities.Extensions.Statements;assembly=Microsoft.Activities.Extensions" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+          xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Num" Type="InOutArgument(x:Int32)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>445,548</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence sad:XamlDebuggerXmlReader.FileName="D:\wf.codeplex.com\src\wf\labs\Microsoft.Activities.Extensions\Microsoft.Activities.Extensions.Tests\TestLoadAndInvokeDependentAssembly.xaml" sap:VirtualizedContainerService.HintSize="405,508">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg3:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String, Object)]" Name="Arguments" />
+      <Variable x:TypeArguments="scg3:IDictionary(x:String, x:Object)" Name="Output" />
+      <Variable x:TypeArguments="x:Object" Name="NumVal" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg3:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <mas:LoadAssembly Assembly="{x:Null}" DisplayName="Load MathActivities" sap:VirtualizedContainerService.HintSize="383,22" Path="MathActivities.dll" />
+    <mas:AddToDictionary x:TypeArguments="x:String, x:Object" Dictionary="[Arguments]" sap:VirtualizedContainerService.HintSize="383,22" Key="Num" Value="[Num]" />
+    <mas:LoadAndInvokeWorkflow LocalAssembly="{x:Null}" Timeout="{x:Null}" sap:VirtualizedContainerService.HintSize="383,100" Input="[Arguments]" Path="SubtractTest.xaml" Result="[Output]" />
+    <mas:GetFromDictionary x:TypeArguments="x:String, x:Object" Dictionary="[Output]" sap:VirtualizedContainerService.HintSize="383,22" Key="Num" Value="[NumVal]" />
+    <Assign sap:VirtualizedContainerService.HintSize="383,58">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[Num]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[CInt(NumVal)]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

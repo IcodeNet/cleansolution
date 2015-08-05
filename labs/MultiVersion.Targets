@@ -1,0 +1,57 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- 
+You can store this project at C:\Program Files (x86)\MSBuild for machine wide use and reference $(MSBuildExtensionsPath) to locate it
+Or if you want to check it in with your solution store it in the solution folder and use <Import Project="$(MSBuildProjectDirectory)\..\MultiVersion.targets" /> 
+
+
+For more information see How to: Extend the Visual Studio Build Process http://msdn.microsoft.com/en-us/library/ms366724.aspx 
+-->
+  <PropertyGroup>
+    <!--Convert the target framework from "v4.0" to a number i.e. 40 or 401 etc.-->
+    <NetFrameworkVersionNum>$(TargetFrameworkVersion.Replace("v", "").Replace(".", ""))</NetFrameworkVersionNum>
+
+    <!--Add an extra 0 if the version number is 40 or 45 so it can be compared to 401-->
+    <NetFrameworkVersionNum Condition="$(NetFrameworkVersionNum.Length) &lt; 3">$(TargetFrameworkVersion.Replace("v", "").Replace(".", ""))0</NetFrameworkVersionNum>
+
+    <!--Don't define your own NET constants - this file will do it for you-->
+    <Error Condition=" $(DefineConstants.Contains('NET'))">Don't define your own NET constants</Error>
+
+    <!--Create a version to use with constants NET40, NET401 etc.-->
+    <NetFrameworkVersion Condition=" !$(DefineConstants.Contains(';NET')) ">$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</NetFrameworkVersion>
+    <DefineConstants Condition=" !$(DefineConstants.Contains(';NET')) ">$(DefineConstants);$(NetFrameworkVersion)</DefineConstants>
+
+    <!--Define the OR_GREATER constants-->
+    <DefineConstants Condition="$(NetFrameworkVersionNum) &gt;= 400">$(DefineConstants);NET40_OR_GREATER</DefineConstants>
+    <DefineConstants Condition="$(NetFrameworkVersionNum) &gt;= 401">$(DefineConstants);NET401_OR_GREATER</DefineConstants>
+    <DefineConstants Condition="$(NetFrameworkVersionNum) &gt;= 450">$(DefineConstants);NET45_OR_GREATER</DefineConstants>
+
+    <!--Update paths to use framework and configuration-->
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath Condition=" '$(Platform)' == 'AnyCPU' ">$(BaseIntermediateOutputPath)$(NetFrameworkVersion)\$(Configuration)\</IntermediateOutputPath>
+    <IntermediateOutputPath Condition=" '$(Platform)' != 'AnyCPU' ">$(BaseIntermediateOutputPath)$(Platform)\$(NetFrameworkVersion)\$(Configuration)\</IntermediateOutputPath>
+    <DesignTimeIntermediateOutputPath></DesignTimeIntermediateOutputPath>
+    <OutputPath Condition="!$(MSBuildProjectName.Contains('.Design'))">bin\$(Configuration)\$(NetFrameworkVersion)\</OutputPath>
+    <OutDir Condition="!$(MSBuildProjectName.Contains('.Design'))">bin\$(Configuration)\$(NetFrameworkVersion)\</OutDir>
+
+    <!--Fix output path for workflow designer assemblies-->
+    <OutputPath Condition="$(MSBuildProjectName.Contains('.Design'))">..\$(MSBuildProjectName.Replace(".Design", "").Replace("$(NetFrameworkVersion)",""))\bin\$(Configuration)\$(NetFrameworkVersion)</OutputPath>
+    <OutDir Condition="$(MSBuildProjectName.Contains('.Design'))">..\$(MSBuildProjectName.Replace(".Design", "").Replace("$(NetFrameworkVersion)",""))\bin\$(Configuration)\$(NetFrameworkVersion)\</OutDir>
+
+    <!--<TargetExt Condition="'$(OutputType)'=='exe'">.exe</TargetExt>
+    <TargetExt Condition="'$(OutputType)'=='winexe'">.exe</TargetExt>
+    <TargetExt Condition="'$(OutputType)'=='library'">.dll</TargetExt>
+    <TargetExt Condition="'$(OutputType)'=='module'">.netmodule</TargetExt>-->
+
+    <!--<AssemblyName>$(MSBuildProjectName)</AssemblyName>-->
+    <!--<AssemblyName Condition=" '$(AssemblyName)'=='' ">$(MSBuildProjectName)</AssemblyName>-->
+    <!--<TargetName Condition=" '$(TargetName)' == '' ">$(AssemblyName)</TargetName>
+    <TargetFileName Condition=" '$(TargetFileName)' == '' ">$(TargetName)$(TargetExt)</TargetFileName>
+    <TargetDir>$([MSBuild]::Escape($([System.IO.Path]::GetFullPath(`$([System.IO.Path]::Combine(`$(MSBuildProjectDirectory)`, `$(OutDir)`))`))))</TargetDir>
+    <TargetPath>$(TargetDir)\$(TargetFileName)</TargetPath>-->
+
+  </PropertyGroup>
+  <Target Name="CleanProj">
+    <RemoveDir Directories="$(OutputPath); $(IntermediateOutputPath); $(BaseIntermediateOutputPath)\$(Configuration); $(BaseIntermediateOutputPath)$(Platform)\$(Configuration)" />
+  </Target>
+
+</Project>

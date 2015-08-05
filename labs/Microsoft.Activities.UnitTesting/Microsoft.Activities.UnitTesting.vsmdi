@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestLists xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestList name="Lists of Tests" id="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <RunConfiguration id="b4bdca53-7b9e-406e-b322-8447b5b6f697" name="local" storage="local.testsettings" type="Microsoft.VisualStudio.TestTools.Common.TestRunConfiguration, Microsoft.VisualStudio.QualityTools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestList>
+  <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+    <TestLinks>
+      <TestLink id="ab66a7df-58db-a8cb-e99e-015e17788948" name="DefaultInjectorShouldReturnPlainReader" storage="microsoft.activities.unittesting.tests\bin\debug.pu1\microsoft.activities.unittesting.tests.dll" enabled="false" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <TestLink id="a7bd8ec1-bf17-0edb-4583-f514e2413999" name="OverriddenInjectorShouldReturnCustomReader" storage="microsoft.activities.unittesting.tests\bin\debug.pu1\microsoft.activities.unittesting.tests.dll" enabled="false" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    </TestLinks>
+  </TestList>
+</TestLists>

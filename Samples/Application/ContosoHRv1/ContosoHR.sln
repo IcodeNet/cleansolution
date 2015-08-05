@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationServices", "HRApplicationServices\HRApplicationServices.csproj", "{3CF71E8D-3D4E-483B-B98D-4BFAAE766BEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationServices.Activities", "HRApplicationServices.Activities\HRApplicationServices.Activities.csproj", "{A219CC00-2A84-4866-9C88-5B888DE8F5D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationServices.Contracts", "HRApplicationServices.Contracts\HRApplicationServices.Contracts.csproj", "{A9859FE8-AF08-4D69-AACB-5518039DB61C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRApplicationServices.Data", "HRApplicationServices.Data\HRApplicationServices.Data.csproj", "{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{9373DAE3-FD28-4C8D-BE56-0B2F06E49E44}"
+	ProjectSection(SolutionItems) = preProject
+		Setup\CheckDependencies.cmd = Setup\CheckDependencies.cmd
+		Setup\ConfigurationWizard.exe = Setup\ConfigurationWizard.exe
+		Setup\ConfigurationWizard.exe.config = Setup\ConfigurationWizard.exe.config
+		Setup\Dependencies.xml = Setup\Dependencies.xml
+		Setup\DependencyChecker.dll = Setup\DependencyChecker.dll
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs07
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HRApplicationServices.Activities\\HRApplicationServices.Activities.csproj
+		SccProjectName1 = HRApplicationServices.Activities
+		SccLocalPath1 = HRApplicationServices.Activities
+		SccProjectUniqueName2 = HRApplicationServices.Contracts\\HRApplicationServices.Contracts.csproj
+		SccProjectName2 = HRApplicationServices.Contracts
+		SccLocalPath2 = HRApplicationServices.Contracts
+		SccProjectUniqueName3 = HRApplicationServices.Data\\HRApplicationServices.Data.csproj
+		SccProjectName3 = HRApplicationServices.Data
+		SccLocalPath3 = HRApplicationServices.Data
+		SccProjectUniqueName4 = HRApplicationServices\\HRApplicationServices.csproj
+		SccProjectName4 = HRApplicationServices
+		SccLocalPath4 = HRApplicationServices
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CF71E8D-3D4E-483B-B98D-4BFAAE766BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF71E8D-3D4E-483B-B98D-4BFAAE766BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF71E8D-3D4E-483B-B98D-4BFAAE766BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF71E8D-3D4E-483B-B98D-4BFAAE766BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A219CC00-2A84-4866-9C88-5B888DE8F5D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A219CC00-2A84-4866-9C88-5B888DE8F5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A219CC00-2A84-4866-9C88-5B888DE8F5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A219CC00-2A84-4866-9C88-5B888DE8F5D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9859FE8-AF08-4D69-AACB-5518039DB61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9859FE8-AF08-4D69-AACB-5518039DB61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9859FE8-AF08-4D69-AACB-5518039DB61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9859FE8-AF08-4D69-AACB-5518039DB61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABFCA53C-4A06-4F3C-B59A-9BA4E20D97C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

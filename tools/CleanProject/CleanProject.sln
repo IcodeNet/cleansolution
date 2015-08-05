@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanProject", "CleanProject\CleanProject.csproj", "{22617EA8-B56D-453A-A324-FEFC877DA5FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6437A42-9981-4E3B-AC27-A924AA836335}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+		version.cs = version.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmdLine", "..\CmdLine\CmdLine\CmdLine.csproj", "{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullClean", "FullClean\FullClean.csproj", "{4910B7D9-17A2-490E-B5AA-F3D749436B3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{22617EA8-B56D-453A-A324-FEFC877DA5FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}.Release|x86.ActiveCfg = Release|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Debug|x86.Build.0 = Debug|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Release|x86.ActiveCfg = Release|Any CPU
+		{4910B7D9-17A2-490E-B5AA-F3D749436B3E}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

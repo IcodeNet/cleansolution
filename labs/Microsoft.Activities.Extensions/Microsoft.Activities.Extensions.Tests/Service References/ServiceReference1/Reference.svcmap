@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bdd588cc-383d-48f7-a0f5-78dde8196129" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59468/StateMachineServiceExample.xamlx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="StateMachineServiceExample.disco" MetadataType="Disco" ID="f640ebdd-ddc6-49e6-87ed-bc292021ecd8" SourceId="1" SourceUrl="http://localhost:59468/StateMachineServiceExample.xamlx?disco" />
+    <MetadataFile FileName="StateMachineServiceExample.wsdl" MetadataType="Wsdl" ID="af0bccdb-f410-4872-9aba-63c80ea3c9c1" SourceId="1" SourceUrl="http://localhost:59468/StateMachineServiceExample.xamlx?wsdl" />
+    <MetadataFile FileName="StateMachineServiceExample.xsd" MetadataType="Schema" ID="1d4374a3-68f4-401f-a8a2-8d4cef46b1f8" SourceId="1" SourceUrl="http://localhost:59468/StateMachineServiceExample.xamlx?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

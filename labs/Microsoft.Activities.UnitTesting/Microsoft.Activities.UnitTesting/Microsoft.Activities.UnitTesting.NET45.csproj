@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{48AB4FF7-0B1B-4823-889C-040D687F67C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Activities.UnitTesting</RootNamespace>
+    <AssemblyName>Microsoft.Activities.UnitTesting</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <CustomBeforeMicrosoftCommonTargets>$(LabDir)\MultiVersion.targets</CustomBeforeMicrosoftCommonTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\NET401\Microsoft.Activities.UnitTesting.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Microsoft.Activities.UnitTesting.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.DurableInstancing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.WorkflowServices" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\LabsAssemblyInfo.cs">
+      <Link>Properties\LabsAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\labsversion.cs">
+      <Link>Properties\labsversion.cs</Link>
+    </Compile>
+    <Compile Include="Activities\NamespaceDoc.cs" />
+    <Compile Include="Activities\SpinNotify.cs" />
+    <Compile Include="Activities\TestAsync.cs" />
+    <Compile Include="Activities\EchoArg.cs" />
+    <Compile Include="Activities\WaitForBookmark.cs" />
+    <Compile Include="AssertOutArgument.cs" />
+    <Compile Include="AssertOutput.cs" />
+    <Compile Include="Activities\DiagnosticTrace.cs" />
+    <Compile Include="AssertHelper.cs" />
+    <Compile Include="AsyncResult.cs" />
+    <Compile Include="CompletedAsyncResult.cs" />
+    <Compile Include="DurableInstancing\SqlDatabaseTest.cs" />
+    <Compile Include="DurableInstancing\SqlWorkflowInstanceStoreTest.cs" />
+    <Compile Include="EnumHelper.cs" />
+    <Compile Include="EpisodeEndedWith.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="NamespaceDoc.cs" />
+    <Compile Include="ListHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Persistence\MemoryStore.cs" />
+    <Compile Include="Persistence\MemoryStoreBehavior.cs" />
+    <Compile Include="Persistence\MemoryStoreElement.cs" />
+    <Compile Include="Persistence\NamespaceDoc.cs" />
+    <Compile Include="Persistence\WorkflowNamespace.cs" />
+    <Compile Include="Persistence\WorkflowServiceNamespace.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Activities\TestBookmark.cs" />
+    <Compile Include="Persistence\SerializationProvider.cs" />
+    <Compile Include="AssertState.cs" />
+    <Compile Include="ReflectionClone.cs" />
+    <Compile Include="ServiceTest.cs" />
+    <Compile Include="Stubs\DelayStub.cs" />
+    <Compile Include="Stubs\IMessagingStub.cs" />
+    <Compile Include="Stubs\InitializeCorrelationStub.cs" />
+    <Compile Include="Stubs\MessagingStubExtension.cs" />
+    <Compile Include="Stubs\NamespaceDoc.cs" />
+    <Compile Include="Stubs\ReceiveReplyStub.cs" />
+    <Compile Include="Stubs\ReceiveStubBase.cs" />
+    <Compile Include="Stubs\ReceiveStub.cs" />
+    <Compile Include="Stubs\SendReplyStub.cs" />
+    <Compile Include="Stubs\SendStub.cs" />
+    <Compile Include="Stubs\SendStubBase.cs" />
+    <Compile Include="Stubs\StubMessage.cs" />
+    <Compile Include="Stubs\StubMessageType.cs" />
+    <Compile Include="WorkflowTestTrace.cs" />
+    <Compile Include="TraceHelper.cs" />
+    <Compile Include="Tracking\AssertTracking.cs" />
+    <Compile Include="Tracking\MemoryTrackingParticipant.401.cs" />
+    <Compile Include="Tracking\NamespaceDoc.cs" />
+    <Compile Include="Tracking\MemoryTrackingParticipant.cs" />
+    <Compile Include="Tracking\TrackingRecordsList.cs" />
+    <Compile Include="Tracking\WorkflowInstanceAbortedEventArgs.cs" />
+    <Compile Include="Tracking\WorkflowInstanceEventArgs.cs" />
+    <Compile Include="WorkflowApplicationTest.cs" />
+    <Compile Include="WorkflowAssertFailedException.cs" />
+    <Compile Include="WorkflowServiceTestHost.cs" />
+    <Compile Include="WorkflowTestResults.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkflowInvokerTest.cs" />
+    <Compile Include="XamlInjector.cs" />
+    <Compile Include="XamlTestDouble.cs" />
+    <Compile Include="XamlTestDoubles.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Microsoft.Activities.UnitTesting.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Microsoft.Activities.Extensions\Microsoft.Activities.Extensions\Microsoft.Activities.Extensions.NET45.csproj">
+      <Project>{d2915d80-7da6-45a0-9f96-0ca8c94b5c3e}</Project>
+      <Name>Microsoft.Activities.Extensions.NET45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="BeforeBuild">
+    <Error Text="The LABDIR property must be set on the command line or environment variable must be supplied." Condition="'$(LABDIR)' == ''" />
+  </Target>
+</Project>

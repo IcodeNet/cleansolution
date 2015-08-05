@@ -1,0 +1,25 @@
+﻿<Activity mc:Ignorable="sap" x:Class="WFCollections.Activities.WriteLineCollection" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sco1="clr-namespace:System.Collections.ObjectModel;assembly=System" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="NumberCollection" Type="InArgument(sco:Collection(x:Int32))" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>349,673</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence sad:XamlDebuggerXmlReader.FileName="D:\wf.codeplex.com\src\wf\Samples\Basic\Activities\WFCollections\WFCollections.Activities\WriteLineCollection.xaml" sap:VirtualizedContainerService.HintSize="309,633">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg3:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <WriteLine sap:VirtualizedContainerService.HintSize="287,61" Text="------------------------" />
+    <WriteLine sap:VirtualizedContainerService.HintSize="287,61" Text="[String.Format(&quot;NumberCollection count: {0}&quot;, NumberCollection.Count)]" />
+    <ForEach x:TypeArguments="x:Int32" sap:VirtualizedContainerService.HintSize="287,206" Values="[NumberCollection]">
+      <ActivityAction x:TypeArguments="x:Int32">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="x:Int32" Name="item" />
+        </ActivityAction.Argument>
+        <WriteLine sap:VirtualizedContainerService.HintSize="257,100" Text="[String.Format(&quot;Number {0}&quot;, item)]" />
+      </ActivityAction>
+    </ForEach>
+    <WriteLine sap:VirtualizedContainerService.HintSize="287,61" Text="------------------------" />
+  </Sequence>
+</Activity>

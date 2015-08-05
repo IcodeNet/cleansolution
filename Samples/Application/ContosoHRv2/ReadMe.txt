@@ -1,0 +1,1 @@
+Be sure to run Setup\CheckDependencies.cmd to create the databases needed for this example

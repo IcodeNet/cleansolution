@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B6EEFD0-E118-40C6-AD59-60A241C04ED4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Activities.UnitTesting.NuGet</RootNamespace>
+    <AssemblyName>Microsoft.Activities.UnitTesting.NuGet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <CustomBeforeMicrosoftCommonTargets>$(LabDir)\MultiVersion.targets</CustomBeforeMicrosoftCommonTargets>
+    
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Microsoft.Activities.UnitTesting.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop" />
+    <Reference Include="Microsoft.VisualStudio.Shell.10.0">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Management.Automation" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\labsversion.cs">
+      <Link>Properties\labsversion.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package\Microsoft.Activities.UnitTesting.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Microsoft.Activities.UnitTesting.snk" />
+    <None Include="Package\tools\install.ps1" />
+    <None Include="Package\tools\uninstall.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Microsoft.Activities.UnitTesting.Screenshot.png" />
+    <Content Include="Images\WF100x100.png" />
+    <Content Include="Package\Samples\How do I test an activity with bookmarks.htm" />
+    <Content Include="Package\Samples\How do I test a Workflow Service.htm" />
+    <Content Include="Package\Samples\How do I test an activity.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Package\Help\" />
+    <Folder Include="Package\lib\Net401\" />
+    <Folder Include="Package\lib\Net40\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>del $(TargetDir)*.nupkg
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetDir)Microsoft.Activities.Extensions.NuGet.dll $(ProjectDir)Package\Tools</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Microsoft.Activities.Extensions\Microsoft.Activities.Extensions.NuGet\Microsoft.Activities.Extensions.NuGet.csproj">
+      <Project>{BC81735D-FF53-4995-97ED-2EC93366BAA6}</Project>
+      <Name>Microsoft.Activities.Extensions.NuGet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <PropertyGroup>
+      <ProjectName>Microsoft.Activities.UnitTesting</ProjectName>
+      <ExtProjectName>Microsoft.Activities.Extensions</ExtProjectName>
+      <AssemblyProjectDir>$(LABDIR)\$(ProjectName)</AssemblyProjectDir>
+      <ExtAssemblyProjectDir>$(LABDIR)\$(ExtProjectName)</ExtAssemblyProjectDir>
+      <SourceCodeDir>$(LABDIR)\$(ProjectName)\$(ProjectName)</SourceCodeDir>
+      <DesignSourceCodeDir>$(LABDIR)\$(ProjectName)\$(ProjectName).Design</DesignSourceCodeDir>
+      <PackageDir>$(AssemblyProjectDir)\$(ProjectName).NuGet\Package</PackageDir>
+      <ExtPackageDir>$(ExtAssemblyProjectDir)\$(ExtProjectName).NuGet\Package</ExtPackageDir>
+      <LibDir>$(PackageDir)\lib</LibDir>
+      <ToolsDir>$(PackageDir)\Tools</ToolsDir>
+      <HelpDir>$(PackageDir)\help</HelpDir>
+      <Lib401Dir>$(LibDir)\Net401</Lib401Dir>
+      <Lib45Dir>$(LibDir)\Net45</Lib45Dir>
+      <Lib40Dir>$(LibDir)\Net40</Lib40Dir>
+      <AssemblySourceDir>$(AssemblyProjectDir)\$(ProjectName)\bin\$(Configuration)</AssemblySourceDir>
+      <NugetTestSource>$(LABDIR)\NuGet.TestSource</NugetTestSource>
+      <TF>"$(VS100COMNTOOLS)..\IDE\tf.exe"</TF>
+    </PropertyGroup>
+    <ItemGroup>
+      <Net40Assemblies Include="$(AssemblySourceDir)\NET40\**\*.dll" />
+      <Net40Symbols Include="$(AssemblySourceDir)\NET40\**\*.pdb" />
+      <Net401Assemblies Include="$(AssemblySourceDir)\NET401\**\*.dll" />
+      <Net401Symbols Include="$(AssemblySourceDir)\NET401\**\*.pdb" />
+      <Net45Assemblies Include="$(AssemblySourceDir)\NET45\**\*.dll" />
+      <Net45Symbols Include="$(AssemblySourceDir)\NET45\**\*.pdb" />
+      <SourceCodeFiles Include="$(SourceCodeDir)\**\*.cs" Exclude="$(SourceCodeDir)\**\*.g*.cs; $(SourceCodeDir)\obj\**\*.*; $(SourceCodeDir)\bin\**\*.*" />
+      <SourceCodeFiles Include="$(SourceCodeDir)\**\*.xaml" Exclude="$(SourceCodeDir)\**\*.g*.xaml" />
+      <SourceCodeFiles Include="$(SourceCodeDir)\**\*.bmp" />
+      <SourceCodeFiles Include="$(SourceCodeDir)\**\*.png" />
+      <ExtSourceCodeFiles Include="$(ExtPackageDir)\src\$(ExtProjectName)\**\*" />
+      <DesignSourceCodeFiles Include="$(DesignSourceCodeDir)\**\*.cs" Exclude="$(SourceCodeDir)\**\*.g*.cs; $(SourceCodeDir)\obj\**\*.*; $(SourceCodeDir)\bin\**\*.*" />
+      <DesignSourceCodeFiles Include="$(DesignSourceCodeDir)\**\*.xaml" />
+      <DesignSourceCodeFiles Include="$(DesignSourceCodeDir)\**\*.bmp" />
+      <DesignSourceCodeFiles Include="$(DesignSourceCodeDir)\**\*.png" />
+      <HelpFiles Include="$(AssemblyProjectDir)\Help\**\*.chm" />
+    </ItemGroup>
+    <Message Text="Assembly source=$(AssemblySourceDir)" />
+    <Message Text="Removing the package directories" />
+    <RemoveDir Directories="$(Lib40Dir);$(Lib401Dir);$(Lib45Dir);$(HelpDir);$(PackageDir)\src" />
+    <Message Text="Creating the package directories" />
+    <MakeDir Directories="$(NugetTestSource);$(Lib40Dir);$(Lib401Dir);$(Lib45Dir);$(HelpDir);$(PackageDir)\src" />
+    <!-- Copy the source files for symbols -->
+    <Message Text="Copying the source code files" />
+    <Copy SourceFiles="@(SourceCodeFiles)" DestinationFiles="@(SourceCodeFiles-&gt;'$(PackageDir)\src\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(ExtSourceCodeFiles)" DestinationFiles="@(ExtSourceCodeFiles-&gt;'$(PackageDir)\src\$(ExtProjectName)\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Text="Copying the designer source code files" />
+    <Copy SourceFiles="@(DesignSourceCodeFiles)" DestinationFiles="@(DesignSourceCodeFiles-&gt;'$(PackageDir)\src\$(ProjectName).Design\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Text="Copying the NET40 Assemblies" />
+    <Copy SourceFiles="@(Net40Assemblies);@(Net40Symbols)" DestinationFolder="$(Lib40Dir)" />
+    <Message Text="Copying the NET401 Assemblies" />
+    <Copy SourceFiles="@(Net401Assemblies);@(Net401Symbols)" DestinationFolder="$(Lib401Dir)" />
+    <Message Text="Copying the NET45 Assemblies" />
+    <Copy SourceFiles="@(Net45Assemblies);@(Net45Symbols)" DestinationFolder="$(Lib45Dir)" />
+    <Message Text="Copying the Help files" />
+    <Copy SourceFiles="@(HelpFiles)" DestinationFolder="$(HelpDir)" />
+    <!-- Get the version number of the main assembly to insert into the nuspec files -->
+    <Message Text="Getting the assembly identity from the NET40 assembly" />
+    <GetAssemblyIdentity AssemblyFiles="$(Lib40Dir)\$(ProjectName).dll">
+      <Output TaskParameter="Assemblies" ItemName="AsmInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Checking out the nuspec file" />
+    <Exec Command="$(TF) checkout $(ProjectName).nuspec" WorkingDirectory="$(PackageDir)" />
+    <!-- insert the version number into the nuspec files -->
+    <Message Text="Updating the version number in the nuspec file" />
+    <XmlUpdate Namespace="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd" Prefix="n" XmlFileName="$(PackageDir)\$(ProjectName).nuspec" XPath="/n:package/n:metadata/n:version" Value="%(AsmInfo.Version)" />
+    <!-- Delete any previous packages -->
+    <Message Text="Deleting the previous packages" />
+    <!--<Delete Files="$(NugetTestSource)\$(ProjectName)$(AsmInfo.Version).nupkg" />-->
+    <Delete Files="$(NugetTestSource)\$(ProjectName)*.nupkg" />
+    <Delete Files="$(NugetTestSource)\$(ProjectName)*.symbols.nupkg" />
+  </Target>
+  <Target Name="AfterBuild">
+    <Message Text="Building the NuGet Package and publishing to Test Source" />
+    <Exec WorkingDirectory="$(PackageDir)" Command="nuget.exe pack $(PackageDir)\$(ProjectName).nuspec -symbols -outputDirectory $(NugetTestSource) -NoPackageAnalysis" />
+  </Target>
+</Project>

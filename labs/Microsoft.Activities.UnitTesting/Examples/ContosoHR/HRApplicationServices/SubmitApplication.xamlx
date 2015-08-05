@@ -1,0 +1,223 @@
+﻿<WorkflowService mc:Ignorable="sap" ConfigurationName="SubmitApplication" sap:VirtualizedContainerService.HintSize="785,1363" Name="p:SubmitApplication" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:ha="clr-namespace:HRApplicationServices.Activities;assembly=HRApplicationServices.Activities" xmlns:hc="clr-namespace:HRApplicationServices.Contracts;assembly=HRApplicationServices.Contracts" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://contoso.com/hr/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:s4="clr-namespace:System;assembly=System.ServiceModel" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:ssa="clr-namespace:System.ServiceModel.Activities;assembly=System.ServiceModel.Activities" xmlns:ssx="clr-namespace:System.ServiceModel.XamlIntegration;assembly=System.ServiceModel" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg3:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <p1:Sequence DisplayName="Application Service" sad:XamlDebuggerXmlReader.FileName="C:\appfabric\ContosoHRv2\HRApplicationServices\SubmitApplication.xamlx" sap:VirtualizedContainerService.HintSize="755,1333" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+    <p1:Sequence.Variables>
+      <p1:Variable x:TypeArguments="CorrelationHandle" Name="handle" />
+      <p1:Variable x:TypeArguments="hc:SubmitJobApplicationRequest" Name="ApplicationRequest" />
+      <p1:Variable x:TypeArguments="hc:SubmitJobApplicationResponse" Name="ApplicationResponse" />
+      <p1:Variable x:TypeArguments="CorrelationHandle" Name="ApplicationIDHandle" />
+      <p1:Variable x:TypeArguments="x:Boolean" Default="False" Name="Hire" />
+      <p1:Variable x:TypeArguments="x:Int32" Name="NagCount" />
+    </p1:Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg3:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TransactedReceiveScope Request="{x:Reference __ReferenceID0}" DisplayName="Receive Application" sap:VirtualizedContainerService.HintSize="733,307">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <p1:Sequence DisplayName="Save and Respond" sap:VirtualizedContainerService.HintSize="255,100">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ha:SaveJobApplication AppRequest="[ApplicationRequest]" sap:VirtualizedContainerService.HintSize="255,22" Result="[ApplicationResponse]" />
+        <SendReply DisplayName="SendResponse" sap:VirtualizedContainerService.HintSize="255,92">
+          <SendReply.CorrelationInitializers>
+            <QueryCorrelationInitializer CorrelationHandle="[ApplicationIDHandle]">
+              <XPathMessageQuery x:Key="key1">
+                <XPathMessageQuery.Namespaces>
+                  <ssx:XPathMessageContextMarkup>
+                    <x:String x:Key="xg0">http://contoso.com/contracts/hr</x:String>
+                  </ssx:XPathMessageContextMarkup>
+                </XPathMessageQuery.Namespaces>sm:body()/xg0:SubmitJobApplicationResponse/xg0:ApplicationID</XPathMessageQuery>
+            </QueryCorrelationInitializer>
+          </SendReply.CorrelationInitializers>
+          <SendReply.Request>
+            <Receive x:Name="__ReferenceID0" CanCreateInstance="True" DisplayName="ReceiveRequest" sap:VirtualizedContainerService.HintSize="255,90" OperationName="SubmitJobApplication" ServiceContractName="p:IApplicationService">
+              <Receive.CorrelationInitializers>
+                <RequestReplyCorrelationInitializer CorrelationHandle="[handle]" />
+              </Receive.CorrelationInitializers>
+              <ReceiveMessageContent>
+                <p1:OutArgument x:TypeArguments="hc:SubmitJobApplicationRequest">[ApplicationRequest]</p1:OutArgument>
+              </ReceiveMessageContent>
+            </Receive>
+          </SendReply.Request>
+          <SendMessageContent>
+            <p1:InArgument x:TypeArguments="hc:SubmitJobApplicationResponse">[ApplicationResponse]</p1:InArgument>
+          </SendMessageContent>
+        </SendReply>
+      </p1:Sequence>
+    </TransactedReceiveScope>
+    <p1:Sequence DisplayName="Screen Applicant" sap:VirtualizedContainerService.HintSize="733,770">
+      <p1:Sequence.Variables>
+        <p1:Variable x:TypeArguments="x:Boolean" Name="EducationPassed" />
+        <p1:Variable x:TypeArguments="x:Boolean" Default="True" Name="WaitingForHuman" />
+      </p1:Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ha:ScreenEducation DisplayName="Auto Screen Education" Education="[ApplicationRequest.Resume.Education]" EducationPassed="[EducationPassed]" sap:VirtualizedContainerService.HintSize="711,22" />
+      <p1:If Condition="[EducationPassed]" DisplayName="If Education Screen Passed" sap:VirtualizedContainerService.HintSize="711,584">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <p1:If.Then>
+          <p1:Sequence DisplayName="Human Screening" sap:VirtualizedContainerService.HintSize="486,478">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+              </scg3:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <p1:While DisplayName="While Human Is Unresponsive" sap:VirtualizedContainerService.HintSize="464,354">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg3:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <p1:While.Condition>[NagCount &lt; 2 AndAlso WaitingForHuman]</p1:While.Condition>
+              <p1:Sequence sap:VirtualizedContainerService.HintSize="438,238">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg3:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ha:RequestHumanScreening ApplicationID="[ApplicationResponse.ApplicationID]" ApplicationRequest="[ApplicationRequest]" DisplayName="Request Human Screening" sap:VirtualizedContainerService.HintSize="200,22" RetryCount="[NagCount]" />
+                <p1:Pick DisplayName="Respond Or Timeout" sap:VirtualizedContainerService.HintSize="200,52">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg3:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <p1:PickBranch DisplayName="Respond Branch" sap:VirtualizedContainerService.HintSize="200,52">
+                    <p1:PickBranch.Variables>
+                      <p1:Variable x:TypeArguments="hc:HumanScreeningResult" Name="HumanScreening" />
+                    </p1:PickBranch.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg3:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p1:PickBranch.Trigger>
+                      <x:Reference>__ReferenceID1</x:Reference>
+                    </p1:PickBranch.Trigger>
+                    <p1:Sequence DisplayName="Update Human Screening Result" sap:VirtualizedContainerService.HintSize="277,474">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg3:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <p1:Assign DisplayName="Assign Hire" sap:VirtualizedContainerService.HintSize="255,58">
+                        <p1:Assign.To>
+                          <p1:OutArgument x:TypeArguments="x:Boolean">[Hire]</p1:OutArgument>
+                        </p1:Assign.To>
+                        <p1:Assign.Value>
+                          <p1:InArgument x:TypeArguments="x:Boolean">[HumanScreening.HiringApproved]</p1:InArgument>
+                        </p1:Assign.Value>
+                      </p1:Assign>
+                      <ha:UpdateHireApproved ApplicantID="[ApplicationResponse.ApplicationID]" DisplayName="Update Hire Approved" sap:VirtualizedContainerService.HintSize="255,22" HireApproved="[Hire]" />
+                      <p1:Assign sap:VirtualizedContainerService.HintSize="255,58">
+                        <p1:Assign.To>
+                          <p1:OutArgument x:TypeArguments="x:Boolean">[WaitingForHuman]</p1:OutArgument>
+                        </p1:Assign.To>
+                        <p1:Assign.Value>
+                          <p1:InArgument x:TypeArguments="x:Boolean">False</p1:InArgument>
+                        </p1:Assign.Value>
+                      </p1:Assign>
+                      <SendReply DisplayName="SendReplyToReceive" sap:VirtualizedContainerService.HintSize="255,92">
+                        <SendReply.Request>
+                          <Receive x:Name="__ReferenceID1" CorrelatesWith="[ApplicationIDHandle]" DisplayName="Receive Human Screening" sap:VirtualizedContainerService.HintSize="277,100" OperationName="HumanScreeningCompleted" ServiceContractName="p:IApplicationService">
+                            <Receive.CorrelatesOn>
+                              <XPathMessageQuery x:Key="key1">
+                                <XPathMessageQuery.Namespaces>
+                                  <ssx:XPathMessageContextMarkup>
+                                    <x:String x:Key="xg0">http://contoso.com/contracts/hr</x:String>
+                                  </ssx:XPathMessageContextMarkup>
+                                </XPathMessageQuery.Namespaces>sm:body()/xg0:HumanScreeningResult/xg0:AppID</XPathMessageQuery>
+                            </Receive.CorrelatesOn>
+                            <ReceiveMessageContent>
+                              <p1:OutArgument x:TypeArguments="hc:HumanScreeningResult">[HumanScreening]</p1:OutArgument>
+                            </ReceiveMessageContent>
+                          </Receive>
+                        </SendReply.Request>
+                        <SendMessageContent>
+                          <p1:InArgument x:TypeArguments="x:Boolean">[True]</p1:InArgument>
+                        </SendMessageContent>
+                      </SendReply>
+                    </p1:Sequence>
+                  </p1:PickBranch>
+                  <p1:PickBranch DisplayName="Timeout" sap:VirtualizedContainerService.HintSize="200,52">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg3:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <p1:PickBranch.Trigger>
+                      <p1:Delay Duration="[TimeSpan.FromSeconds(30)]" sap:VirtualizedContainerService.HintSize="264,100" />
+                    </p1:PickBranch.Trigger>
+                    <p1:Sequence sap:VirtualizedContainerService.HintSize="264,182">
+                      <p1:Sequence.Variables>
+                        <p1:Variable x:TypeArguments="x:String" Name="x" />
+                      </p1:Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg3:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <p1:Assign sap:VirtualizedContainerService.HintSize="242,58">
+                        <p1:Assign.To>
+                          <p1:OutArgument x:TypeArguments="x:Int32">[NagCount]</p1:OutArgument>
+                        </p1:Assign.To>
+                        <p1:Assign.Value>
+                          <p1:InArgument x:TypeArguments="x:Int32">[NagCount + 1]</p1:InArgument>
+                        </p1:Assign.Value>
+                      </p1:Assign>
+                    </p1:Sequence>
+                  </p1:PickBranch>
+                </p1:Pick>
+              </p1:Sequence>
+            </p1:While>
+          </p1:Sequence>
+        </p1:If.Then>
+        <p1:If.Else>
+          <ha:UpdateHireApproved ApplicantID="[ApplicationResponse.ApplicationID]" DisplayName="Update No Hire" sap:VirtualizedContainerService.HintSize="200,478" HireApproved="[Hire]" />
+        </p1:If.Else>
+      </p1:If>
+    </p1:Sequence>
+    <p1:Sequence DisplayName="Notify Applicant" sap:VirtualizedContainerService.HintSize="733,52">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ha:NotifyApplicant Cancel="[NagCount &gt;= 2]" sap:VirtualizedContainerService.HintSize="200,22" Hire="[Hire]" Resume="[ApplicationRequest.Resume]" />
+    </p1:Sequence>
+  </p1:Sequence>
+</WorkflowService>

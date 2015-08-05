@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingStateMachine.Activities.NET401", "TrackingStateMachine.Activities\TrackingStateMachine.Activities.NET401.csproj", "{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingStateMachine.NET401", "TrackingStateMachine\TrackingStateMachine.NET401.csproj", "{F454939A-32F4-42F5-B819-198998E6DF75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingStateMachine.Tests", "TrackingStateMachine.Tests\TrackingStateMachine.Tests.csproj", "{8D313137-849B-4BBC-9AD0-706E963749FF}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccLocalPath0 = .
+		SccLocalPath1 = TrackingStateMachine.Activities
+		SccLocalPath2 = TrackingStateMachine
+		SccLocalPath3 = TrackingStateMachine.Tests
+		SccNumberOfProjects = 4
+		SccProjectName1 = TrackingStateMachine.Activities
+		SccProjectName2 = TrackingStateMachine
+		SccProjectName3 = TrackingStateMachine.Tests
+		SccProjectUniqueName1 = TrackingStateMachine.Activities\\TrackingStateMachine.Activities.NET401.csproj
+		SccProjectUniqueName2 = TrackingStateMachine\\TrackingStateMachine.NET401.csproj
+		SccProjectUniqueName3 = TrackingStateMachine.Tests\\TrackingStateMachine.Tests.csproj
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs07
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Contracts|Any CPU = Debug Contracts|Any CPU
+		Debug Contracts|x86 = Debug Contracts|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D313137-849B-4BBC-9AD0-706E963749FF}.Debug Contracts|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D313137-849B-4BBC-9AD0-706E963749FF}.Debug Contracts|Any CPU.Build.0 = Debug|Any CPU
+		{8D313137-849B-4BBC-9AD0-706E963749FF}.Debug Contracts|x86.ActiveCfg = Debug|Any CPU
+		{8D313137-849B-4BBC-9AD0-706E963749FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D313137-849B-4BBC-9AD0-706E963749FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D313137-849B-4BBC-9AD0-706E963749FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8D313137-849B-4BBC-9AD0-706E963749FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D313137-849B-4BBC-9AD0-706E963749FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D313137-849B-4BBC-9AD0-706E963749FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}.Debug Contracts|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}.Debug Contracts|Any CPU.Build.0 = Debug|Any CPU
+		{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}.Debug Contracts|x86.ActiveCfg = Debug|Any CPU
+		{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEAC2607-8EC9-4ADA-B018-6A3DB1F24BE5}.Release|x86.ActiveCfg = Release|Any CPU
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Debug Contracts|Any CPU.ActiveCfg = Debug Contracts|Any CPU
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Debug Contracts|Any CPU.Build.0 = Debug Contracts|Any CPU
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Debug Contracts|x86.ActiveCfg = Debug Contracts|x86
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Debug Contracts|x86.Build.0 = Debug Contracts|x86
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Debug|x86.ActiveCfg = Debug|x86
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Debug|x86.Build.0 = Debug|x86
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Release|x86.ActiveCfg = Release|x86
+		{F454939A-32F4-42F5-B819-198998E6DF75}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

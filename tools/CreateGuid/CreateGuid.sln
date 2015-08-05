@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateGuid", "CreateGuid\CreateGuid.csproj", "{98FA8893-3F1E-4A20-8141-AEE6ED61CBB5}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccLocalPath0 = .
+		SccLocalPath1 = CreateGuid
+		SccNumberOfProjects = 2
+		SccProjectName1 = CreateGuid
+		SccProjectUniqueName1 = CreateGuid\\CreateGuid.csproj
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs07
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98FA8893-3F1E-4A20-8141-AEE6ED61CBB5}.Debug|x86.ActiveCfg = Debug|x86
+		{98FA8893-3F1E-4A20-8141-AEE6ED61CBB5}.Debug|x86.Build.0 = Debug|x86
+		{98FA8893-3F1E-4A20-8141-AEE6ED61CBB5}.Release|x86.ActiveCfg = Release|x86
+		{98FA8893-3F1E-4A20-8141-AEE6ED61CBB5}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

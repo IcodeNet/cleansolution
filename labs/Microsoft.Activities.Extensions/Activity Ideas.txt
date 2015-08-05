@@ -1,0 +1,9 @@
+Ideas for activities
+
+Collection:
+Find - Collection<T> finds the item using a predicate
+
+ElementAt - Collection<T> returns the element at a specific index
+
+Dictionary activities
+A set of activities for IDictionary<TKey, TValue>

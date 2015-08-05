@@ -1,0 +1,4 @@
+C:\Users\vyront\Downloads\wf-80373\tools\CmdLine\CmdLine\bin\Release\CmdLine.dll
+C:\Users\vyront\Downloads\wf-80373\tools\CmdLine\CmdLine\bin\Release\CmdLine.pdb
+C:\Users\vyront\Downloads\wf-80373\tools\CmdLine\CmdLine\obj\Release\CmdLine.dll
+C:\Users\vyront\Downloads\wf-80373\tools\CmdLine\CmdLine\obj\Release\CmdLine.pdb

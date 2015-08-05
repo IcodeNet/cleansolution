@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActionDidNotThrow" xml:space="preserve">
+    <value>Action did not throw exception of type {0}.</value>
+  </data>
+  <data name="ActivityStateRecordDoesNotExist" xml:space="preserve">
+    <value>AssertTracking.{0} failed. Cannot find ActivityStateRecord for Activity "{1}" with state &lt;{2}&gt;.</value>
+  </data>
+  <data name="ActivityStateRecordDoesNotMatchArg" xml:space="preserve">
+    <value>AssertTracking.{0} failed. Cannot find ActivityStateRecord for Activity "{1}" with state &lt;{2}&gt; and argument &lt;{3}&gt; matching regular expression &lt;{4}&gt; starting at index &lt;{5}&gt;.</value>
+  </data>
+  <data name="ActivityStateRecordExists" xml:space="preserve">
+    <value>AssertTracking.{0} failed. Found ActivityStateRecord for Activity "{1}" with state &lt;{2}&gt;.</value>
+  </data>
+  <data name="count_must_not_be_greater_than_expected_count" xml:space="preserve">
+    <value>count must not be greater than expected.count()</value>
+  </data>
+  <data name="IsInstanceOfTypeFailed" xml:space="preserve">
+    <value>AssertOutArgument.IsInstanceOfType failed.  Expected type:&lt;{0}&gt;. Actual type:&lt;{1}&gt;.</value>
+  </data>
+  <data name="OutArgAreEqualFailMsg" xml:space="preserve">
+    <value>AssertOutArgument.AreEqual failed. Expected:&lt;{0}&gt;. Actual:&lt;{1}&gt;.</value>
+  </data>
+  <data name="OutArgAreNotEqualFailMsg" xml:space="preserve">
+    <value>AssertOutArgument.AreNotEqual failed. Expected any value except:&lt;{0}&gt;. Actual:&lt;{1}&gt;.</value>
+  </data>
+  <data name="OutArgBoolFailMsg" xml:space="preserve">
+    <value>AssertOutArgument.{0} failed</value>
+  </data>
+  <data name="OutArgCollectionArgEqualFailMsg" xml:space="preserve">
+    <value>AssertOutArgument.AreEqualCollection failed at index {0}. Expected:&lt;{1}&gt;. Actual:&lt;{2}&gt;.</value>
+  </data>
+  <data name="OutArgDoesNotContain" xml:space="preserve">
+    <value>AssertOutArgument.{0} failed. Output does not contain an argument named &lt;{1}&gt;.</value>
+  </data>
+  <data name="OutArgIsNotNull" xml:space="preserve">
+    <value>AssertOutArgument.IsNotNull failed.</value>
+  </data>
+  <data name="OutArgIsNotNullInternal" xml:space="preserve">
+    <value>AssertOutArgument.{0} failed. {1}.</value>
+  </data>
+  <data name="OutArgIsNull" xml:space="preserve">
+    <value>AssertOutArgument.IsNull failed.</value>
+  </data>
+  <data name="OutArgOutputIsNull" xml:space="preserve">
+    <value>AssertOutArgument.{0} failed output is null.</value>
+  </data>
+  <data name="OutArgWrongType" xml:space="preserve">
+    <value>AssertOutArgument.{0} failed. Wrong type for OutArgument &lt;{1}&gt;. Expected Type: &lt;{2}&gt;. Actual Type: &lt;{3}&gt;.</value>
+  </data>
+  <data name="OutputIsNull" xml:space="preserve">
+    <value>output is null</value>
+  </data>
+  <data name="RecordCountInvalid" xml:space="preserve">
+    <value>Count must be &gt; 0</value>
+  </data>
+  <data name="TrackingRecordDoesNotExist" xml:space="preserve">
+    <value>AssertTracking.{0} failed. Cannot find TrackingRecord with predicate.</value>
+  </data>
+  <data name="ActivityStateRecordDoesNotExistAt" xml:space="preserve">
+    <value>AssertTracking.{0} failed. Cannot find ActivityStateRecord for Activity "{1}" with state &lt;{2}&gt; at index &lt;{3}&gt;.</value>
+  </data>
+  <data name="TrackingRecordNotBefore" xml:space="preserve">
+    <value>AssertTracking.{0} failed. ActivityStateRecord for Activity "{1}" with state &lt;{2}&gt; was found at index &lt;{3}&gt; and did not occur before Activity "{4}" found at index &lt;{5}&gt;.</value>
+  </data>
+  <data name="TrackingRecordNotFound" xml:space="preserve">
+    <value>AssertTracking.{0} failed. ActivityStateRecord for Activity "{1}" with state &lt;{2}&gt; not found.</value>
+  </data>
+  <data name="ScheduledRecordIdNotFound" xml:space="preserve">
+    <value>AssertTracking.{0} failed. ActivityScheduledRecord for Parent Activity  Id [{1}] and Child Id [{2}] not found.</value>
+  </data>
+  <data name="ScheduledRecordNotFound" xml:space="preserve">
+    <value>AssertTracking.{0} failed. ActivityScheduledRecord for Parent Activity "{1}" and Child "{2}" not found.</value>
+  </data>
+  <data name="WorkflowInstanceStateNotFound" xml:space="preserve">
+    <value>AssertTracking.{0} failed. Cannot find WorkflowInstanceRecord for with state &lt;{1}&gt;.</value>
+  </data>
+  <data name="TrackingRecordNotBeforeState" xml:space="preserve">
+    <value>AssertTracking.{0} failed. ActivityStateRecord for Activity "{1}" with state &lt;{2}&gt; was found at index &lt;{3}&gt; and did not occur before Activity "{4}" found at index &lt;{5}&gt;.</value>
+  </data>
+  <data name="WorkflowInstanceStateNotFoundIndex" xml:space="preserve">
+    <value>AssertTracking.{0} failed. Cannot find WorkflowInstanceRecord for with state &lt;{1}&gt; starting at index &lt;{2}&gt;.</value>
+  </data>
+  <data name="AssertCaughtExceptionInnerExceptionInstanceOfTypeFailed" xml:space="preserve">
+    <value>AssertHelper.Throws failed. Inner exception instance of type failed. Expected type:&lt;{0}&gt;. Actual type:&lt;{1}&gt;.</value>
+  </data>
+  <data name="ExpectedExceptionMessageMismatch" xml:space="preserve">
+    <value>AssertHelper.Throws failed. Expected exception message &lt;"{0}"&gt; actual message &lt;"{1}"&gt;</value>
+  </data>
+  <data name="AggregateExceptionDoesNotContainExpectedException" xml:space="preserve">
+    <value>AggregateException does not contain expected exception type {0} Aggregate message {1}</value>
+  </data>
+  <data name="OccursInOrderExpectedCollectionLargerThanActual" xml:space="preserve">
+    <value>AssertHelper.OccursInOrder failed. Expected collection of &lt;{0}&gt; is larger than actual collection, expected &lt;{1}&gt; found &lt;{2}&gt;</value>
+  </data>
+  <data name="OccursInOrderExpectedNotActual" xml:space="preserve">
+    <value>AssertHelper.OccursInOrder failed. Expected:&lt;{0}&gt;. Actual:&lt;{1}&gt; in collection of &lt;{2}&gt; found at index {3} expected &lt;{4}&gt; found &lt;{5}&gt;</value>
+  </data>
+  <data name="ContainsValueNotFound" xml:space="preserve">
+    <value>AssertHelper.Contains failed. Value &lt;{0}&gt; was not found in collection &lt;{1}&gt;</value>
+  </data>
+  <data name="stringStateRecordDoesNotExistCount" xml:space="preserve">
+    <value>AssertTracking.{0} failed. For Activity Id [{1}] with state &lt;{2}&gt; expected a count of &lt;{3}&gt; actual count was &lt;{4}&gt;.</value>
+  </data>
+  <data name="ActivityStateRecordIdDoesNotExist" xml:space="preserve">
+    <value>AssertTracking.{0} failed. Cannot find ActivityStateRecord for Activity Id [{1}] with state &lt;{2}&gt;.</value>
+  </data>
+  <data name="ScheduledIdRecordNotFound" xml:space="preserve">
+    <value>AssertTracking.{0} failed. ActivityScheduledRecord for Parent Activity Id [{1}] and Child Id [{2}] not found.</value>
+  </data>
+  <data name="ActivityStateRecordIdDoesNotExistIndex" xml:space="preserve">
+    <value>AssertTracking.{0} failed. Cannot find ActivityStateRecord for Activity Id [{1}] with state &lt;{2}&gt; starting at index &lt;{3}&gt;.</value>
+  </data>
+  <data name="WorkflowApplicationTest_CheckResultsOutput_Results_Output_is_not_set_yet" xml:space="preserve">
+    <value>Results.Output is not set yet</value>
+  </data>
+  <data name="parameter_arguments" xml:space="preserve">
+    <value>arguments</value>
+  </data>
+  <data name="If_using_InArguments_you_should_not_pass_arguments_in_a_dictionary" xml:space="preserve">
+    <value>If using InArguments you should not pass arguments in a dictionary.</value>
+  </data>
+</root>

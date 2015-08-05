@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fce59c18-6300-42c3-a59c-f00290ec6af7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52609/ServiceExtensionTest.xamlx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceExtensionTest.xsd" MetadataType="Schema" ID="e82e611e-ff32-4652-a19f-938efd6f1fb6" SourceId="1" SourceUrl="http://localhost:52609/ServiceExtensionTest.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="ServiceExtensionTest.wsdl" MetadataType="Wsdl" ID="426b2610-40c7-4715-aece-5a9df4fadfd5" SourceId="1" SourceUrl="http://localhost:52609/ServiceExtensionTest.xamlx?wsdl" />
+    <MetadataFile FileName="ServiceExtensionTest.disco" MetadataType="Disco" ID="2ac03be6-0e99-46e0-b4bf-08fecee3ea30" SourceId="1" SourceUrl="http://localhost:52609/ServiceExtensionTest.xamlx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.ApplicationServer.Caching.Activities", "src\Microsoft.ApplicationServer.Caching.Activities\Microsoft.ApplicationServer.Caching.Activities.csproj", "{F36D2790-5C35-4E92-B66F-39C31770FCE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.ApplicationServer.Caching.Activities.Tests", "src\Microsoft.ApplicationServer.Caching.Activities.Tests\Microsoft.ApplicationServer.Caching.Activities.Tests.csproj", "{E6770FAD-468C-4BBA-A719-FCF91373CB2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{92C38392-EA15-4367-BE03-AB9A41BABEED}"
+	ProjectSection(SolutionItems) = preProject
+		local.testsettings = local.testsettings
+		Microsoft.ApplicationServer.Caching.Activities.vsmdi = Microsoft.ApplicationServer.Caching.Activities.vsmdi
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{31E3B032-A6DC-41CA-894A-0EDE72C4E2CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implement Cache Aside Pattern", "Implement Cache Aside Pattern", "{81552AA5-850D-40AC-8454-7AF5B6ADBBD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Using Cache Notifications", "Using Cache Notifications", "{078CB6D7-626C-468F-8A07-E3F7391AB8CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheAsideExample", "CacheAsideExample\CacheAsideExample.csproj", "{513A7435-46F4-4E07-A207-678425A2E7E9}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs07
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = src\\Microsoft.ApplicationServer.Caching.Activities.Tests\\Microsoft.ApplicationServer.Caching.Activities.Tests.csproj
+		SccProjectName1 = src/Microsoft.ApplicationServer.Caching.Activities.Tests
+		SccLocalPath1 = src\\Microsoft.ApplicationServer.Caching.Activities.Tests
+		SccProjectUniqueName2 = src\\Microsoft.ApplicationServer.Caching.Activities\\Microsoft.ApplicationServer.Caching.Activities.csproj
+		SccProjectName2 = src/Microsoft.ApplicationServer.Caching.Activities
+		SccLocalPath2 = src\\Microsoft.ApplicationServer.Caching.Activities
+		SccProjectUniqueName3 = CacheAsideExample\\CacheAsideExample.csproj
+		SccProjectTopLevelParentUniqueName3 = Microsoft.ApplicationServer.Caching.Activities.sln
+		SccProjectName3 = CacheAsideExample
+		SccLocalPath3 = CacheAsideExample
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Microsoft.ApplicationServer.Caching.Activities.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F36D2790-5C35-4E92-B66F-39C31770FCE3}.Release|x86.ActiveCfg = Release|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E6770FAD-468C-4BBA-A719-FCF91373CB2B}.Release|x86.ActiveCfg = Release|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{513A7435-46F4-4E07-A207-678425A2E7E9}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81552AA5-850D-40AC-8454-7AF5B6ADBBD1} = {31E3B032-A6DC-41CA-894A-0EDE72C4E2CB}
+		{078CB6D7-626C-468F-8A07-E3F7391AB8CD} = {31E3B032-A6DC-41CA-894A-0EDE72C4E2CB}
+		{513A7435-46F4-4E07-A207-678425A2E7E9} = {81552AA5-850D-40AC-8454-7AF5B6ADBBD1}
+	EndGlobalSection
+EndGlobal

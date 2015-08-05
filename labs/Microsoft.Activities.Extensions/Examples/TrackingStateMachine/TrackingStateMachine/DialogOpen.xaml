@@ -1,0 +1,22 @@
+﻿<Window x:Class="TrackingStateMachine.DialogOpen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Enter Instance ID" Height="130" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition />            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+            <TextBlock Text="Id:" Height="25" Margin="3"/>
+            <TextBox Name="textId" Width="252" Height="24" Margin="3"/>
+        </StackPanel>
+        <Button Content="OK" Grid.Row="1" Height="23" Margin="15" Name="buttonOk" Width="75" IsDefault="True" Click="ButtonOkClick" />
+        <Button Content="Cancel" Grid.Row="1" Grid.Column="1" Height="23" Margin="15" Name="buttonCancel" Width="75" IsCancel="True" />
+    </Grid>
+    
+</Window>

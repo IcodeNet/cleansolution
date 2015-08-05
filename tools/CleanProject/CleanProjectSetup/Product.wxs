@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="c102c666-52fe-4534-a7b0-e898a0e78a02" Name="CleanProject" Language="1033" Version="1.2.0.1020" Manufacturer="Ron Jacobs" UpgradeCode="208e0350-6d90-4a4e-a015-c31397fded32">
+    <Package InstallerVersion="200" Compressed="yes" />
+
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLLOCATION" Name="Clean Project">
+          <Component Id="CleanProject" Guid="5E057102-EB2F-4A36-B5EF-3F6F7FF79762">
+            <File Id="cpexe" Source="$(var.CleanProject.TargetDir)CleanProject.exe" />
+            <File Id="cmddll" Source="$(var.CleanProject.TargetDir)cmdline.dll" />
+            <File Id="ziplib" Source="$(var.CleanProject.TargetDir)Ionic.Zip.dll" />
+          </Component>
+          <Component Id="RegistryEntries" Guid="c5186a6b-bd84-4259-9e74-4b5a1d5ae5b6">
+            <RegistryKey Root="HKCR"
+										 Key="Folder\shell\cleanproject">
+              <RegistryValue Type="string" Value="Clean, Remove Source Bindings and Zip Solution"/>
+            </RegistryKey>
+            <RegistryKey Root="HKCR"
+										 Key="Folder\shell\cleanproject\command">
+              <RegistryValue Type="string" Value="[INSTALLLOCATION]CleanProject /D:&quot;%1&quot; /R /Z /W"/>
+            </RegistryKey>
+            <Environment Id="PATH" Name="PATH" Value="[INSTALLLOCATION]" Permanent="no" Part="last" Action="set" System="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="CleanProjectFeature" Title="Clean Project" Level="1">
+      <ComponentRef Id="CleanProject" />
+      <ComponentRef Id="RegistryEntries" />
+      <!--<ComponentGroupRef Id="Product.Generated" />-->
+    </Feature>
+
+    <UI>
+      <UIRef Id="WixUI_Minimal" />
+    </UI>
+    
+    <Binary Id="CleanProjectVSTool.dll" SourceFile="$(var.CleanProjectVSTool.TargetDir)$(var.CleanProjectVSTool.TargetName).CA.dll" />
+    <CustomAction Id="AddCleanProjectTool" BinaryKey="CleanProjectVSTool.dll" DllEntry="AddCleanProjectTool" Execute="immediate" />
+    <CustomAction Id="RemoveCleanProjectTool" BinaryKey="CleanProjectVSTool.dll" DllEntry="RemoveCleanProjectTool" Execute="immediate" />
+    <Property Id="WixShellExecTarget" Value="http://wf.codeplex.com/wikipage?title=Thank%20you%20for%20installing%20CleanProject" />
+    <CustomAction Id="OpenURL" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+    <InstallExecuteSequence>
+      <Custom Action='AddCleanProjectTool' After="InstallFinalize">NOT Installed</Custom>
+      <Custom Action='OpenURL' After="InstallFinalize">NOT Installed</Custom>
+      <Custom Action="RemoveCleanProjectTool" After='InstallFinalize'>Installed AND NOT UPGRADINGPRODUCTCODE</Custom>
+    </InstallExecuteSequence>
+  </Product>
+</Wix>

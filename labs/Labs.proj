@@ -1,0 +1,140 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Release" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+
+  <!-- Version Properties -->
+  <PropertyGroup>
+    <Major>1</Major>
+    <Minor>0</Minor>
+    <Build>0</Build>
+    <Revision>0</Revision>
+  </PropertyGroup>
+
+  <!-- Path Properties -->
+  <PropertyGroup> 
+    <ActivitiesProject>Microsoft.Activities.Extensions</ActivitiesProject>
+    <ActivitiesSlnDir>$(LABDIR)\$(ActivitiesProject)</ActivitiesSlnDir>
+    <ActivitiesProjectDir>$(LABDIR)\$(ActivitiesProject)\$(ActivitiesProject)</ActivitiesProjectDir>
+    <ActivitiesNuGetDir>$(ActivitiesSlnDir)\Microsoft.Activities.Extensions.NuGet</ActivitiesNuGetDir>
+    <UnitTestProject>Microsoft.Activities.UnitTesting</UnitTestProject>
+    <UnitTestSlnDir>$(LABDIR)\$(UnitTestProject)</UnitTestSlnDir>
+    <UnitTestProjectDir>$(LABDIR)\$(UnitTestProject)\$(UnitTestProject)</UnitTestProjectDir>
+    <UnitTestNuGetDir>$(UnitTestSlnDir)\Microsoft.Activities.UnitTesting.NuGet</UnitTestNuGetDir>
+    <ReleaseDir>$(LABDIR)\Release</ReleaseDir>
+    <TF>&quot;$(VS110COMNTOOLS)..\IDE\tf.exe&quot;</TF>
+  </PropertyGroup>
+
+  <Target Name="Clean">
+    <Message Text="Cleaning Labs" />
+    <MSBuild Projects="Labs.sln" StopOnFirstFailure="true" Properties="$(BuildConfigProp)" BuildInParallel="true" Targets="Clean"/>
+    <RemoveDir Directories="$(ReleaseDir)"/>
+    <RemoveDir Directories="$(LABDIR)\NuGet.TestSource"/>
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="UpdateVersion">
+    <Message Text="Building Labs" />
+    <MakeDir Directories="$(ReleaseDir)"/>
+    <MakeDir Directories="$(LABDIR)\NuGet.TestSource"/>
+    <MSBuild Projects="Labs.sln" StopOnFirstFailure="true" Properties="Configuration=Release" BuildInParallel="true" Targets="Rebuild"/>
+  </Target>
+
+  <Target Name="UpdateVersion" DependsOnTargets="Clean">
+    <Message Text="Incrementing Version" />
+    <Message Text="Check Out labsversion.*" />
+    <Exec Command="$(TF) checkout labsversion.*" WorkingDirectory="$(LABDIR)" />
+    <Version VersionFile="labsversion.txt" BuildType="None" StartDate="01/01/2011" RevisionType="BuildIncrement">
+      <Output TaskParameter="Major" PropertyName="Major" />
+      <Output TaskParameter="Minor" PropertyName="Minor" />
+      <Output TaskParameter="Build" PropertyName="Build" />
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </Version>
+    <AssemblyInfo CodeLanguage="CS"
+                  OutputFile="labsversion.cs"
+                  AssemblyVersion="$(Major).$(Minor).$(Build).$(Revision)"
+                  AssemblyFileVersion="$(Major).$(Minor).$(Build).$(Revision)" />
+
+    <Message Text="Version: $(Major).$(Minor).$(Build).$(Revision)"/>
+  </Target>
+
+
+  <Target Name="Test" DependsOnTargets="Build">
+
+    <Message Text="Testing Labs" />
+    <Message Text="Testing .NET 4.5 Release" />
+    <Exec Command='"$(VSINSTALLDIR)Common7\IDE\mstest.exe" /nologo /testsettings:Labs.testsettings /testcontainer:Microsoft.Activities.Extensions\Microsoft.Activities.Extensions.Tests\bin\Release\NET45\Microsoft.Activities.Extensions.Tests.dll' />
+    <Exec Command='"$(VSINSTALLDIR)Common7\IDE\mstest.exe" /nologo /testsettings:Labs.testsettings /testcontainer:Microsoft.Activities.UnitTesting\Microsoft.Activities.UnitTesting.Tests\bin\Release\NET45\Microsoft.Activities.UnitTesting.Tests.dll' />
+
+    <Message Text="Testing .NET 4.0.1 Release" />
+    <Exec Command='"$(VSINSTALLDIR)Common7\IDE\mstest.exe" /nologo /testsettings:Labs.testsettings /testcontainer:Microsoft.Activities.Extensions\Microsoft.Activities.Extensions.Tests\bin\Release\NET401\Microsoft.Activities.Extensions.Tests.dll' />
+    <Exec Command='"$(VSINSTALLDIR)Common7\IDE\mstest.exe" /nologo /testsettings:Labs.testsettings /testcontainer:Microsoft.Activities.UnitTesting\Microsoft.Activities.UnitTesting.Tests\bin\Release\NET401\Microsoft.Activities.UnitTesting.Tests.dll' />
+    
+    <Message Text="Testing .NET 4.0.0 Release" />
+    <Exec Command='"$(VSINSTALLDIR)Common7\IDE\mstest.exe" /nologo /testsettings:Labs.testsettings /testcontainer:Microsoft.Activities.Extensions\Microsoft.Activities.Extensions.Tests\bin\Release\NET40\Microsoft.Activities.Extensions.Tests.dll' />
+    <Exec Command='"$(VSINSTALLDIR)Common7\IDE\mstest.exe" /nologo /testsettings:Labs.testsettings /testcontainer:Microsoft.Activities.UnitTesting\Microsoft.Activities.UnitTesting.Tests\bin\Release\NET40\Microsoft.Activities.UnitTesting.Tests.dll' />
+  </Target>
+
+  <Target Name="Docs" DependsOnTargets="Test">
+    <Message Text="Building Microsoft.Activities.Extensions Docs" />
+    <MSBuild Projects="$(ActivitiesSlnDir)\Microsoft.Activities.Extensions.Help.shfbproj" Properties="Configuration=Release;Platform=AnyCPU;OutDir=Help\" />
+    <Message Text="Building Microsoft.Activities.UnitTesting Docs" />
+    <MSBuild Projects="$(UnitTestSlnDir)\Microsoft.Activities.UnitTesting.Help.shfbproj" Properties="Configuration=Release;Platform=AnyCPU;OutDir=Help\" />
+  </Target>
+
+  <Target Name="NuGet" DependsOnTargets="Docs">
+    <Message Text="Building NuGet" />
+    <MSBuild Projects="$(ActivitiesNuGetDir)\$(ActivitiesProject).NuGet.csproj" StopOnFirstFailure="true" Properties="Configuration=Release" BuildInParallel="true" Targets="Rebuild"/>
+    <MSBuild Projects="$(UnitTestNuGetDir)\$(UnitTestProject).NuGet.csproj" StopOnFirstFailure="true" Properties="Configuration=Release" BuildInParallel="true" Targets="Rebuild"/>
+  </Target>
+
+  <Target Name="CodePlex" DependsOnTargets="Docs">
+    <Message Text="Building zip" />
+    <ItemGroup>
+      <Activities40Bin Include="$(ActivitiesProjectDir)\bin\Release\NET40\**\*.dll" />
+      <Activities401Bin Include="$(ActivitiesProjectDir)\bin\Release\NET401\**\*.dll" />
+      <Activities45Bin Include="$(ActivitiesProjectDir)\bin\Release\NET45\**\*.dll" />
+      <ActivitiesHelp Include="$(ActivitiesSlnDir)\Help\*.chm" />
+      <UnitTest40Bin Include="$(UnitTestProjectDir)\bin\Release\NET401\**\*.dll" />
+      <UnitTest401Bin Include="$(UnitTestProjectDir)\bin\Release\NET401\**\*.dll" />
+      <UnitTest45Bin Include="$(UnitTestProjectDir)\bin\Release\NET45\**\*.dll" />
+      <UnitTestHelp Include="$(UnitTestSlnDir)\Help\*.chm" />
+    </ItemGroup>
+         
+    <Message Text="$(ActivitiesProjectDir)\Release\**\*.dll" />
+    <Copy SourceFiles="@(ActivitiesHelp)" DestinationFolder="$(ReleaseDir)" />    
+    <Zip Files="@(Activities40Bin)"
+         Flatten="true"
+         WorkingDirectory="$(ReleaseDir)"
+         ZipFileName="$(ReleaseDir)\$(ActivitiesProject).NET40.$(Major).$(Minor).$(Build).$(Revision).zip"
+         ZipLevel="9" />
+    <Zip Files="@(Activities401Bin)"
+         Flatten="true"
+         WorkingDirectory="$(ReleaseDir)"
+         ZipFileName="$(ReleaseDir)\$(ActivitiesProject).NET401.$(Major).$(Minor).$(Build).$(Revision).zip"
+         ZipLevel="9" />
+    <Zip Files="@(Activities45Bin)"
+         Flatten="true"
+         WorkingDirectory="$(ReleaseDir)"
+         ZipFileName="$(ReleaseDir)\$(ActivitiesProject).NET45.$(Major).$(Minor).$(Build).$(Revision).zip"
+         ZipLevel="9" />
+    <Message Text="$(UnitTestProjectDir)\Release\**\*.dll" />
+    <Copy SourceFiles="@(UnitTestHelp)" DestinationFolder="$(ReleaseDir)" />
+    <Zip Files="@(UnitTest40Bin)"
+         Flatten="true"
+         WorkingDirectory="$(ReleaseDir)"
+         ZipFileName="$(ReleaseDir)\$(UnitTestProject).NET40.$(Major).$(Minor).$(Build).$(Revision).zip"
+         ZipLevel="9" />
+    <Zip Files="@(UnitTest401Bin)"
+         Flatten="true"
+         WorkingDirectory="$(ReleaseDir)"
+         ZipFileName="$(ReleaseDir)\$(UnitTestProject).NET401.$(Major).$(Minor).$(Build).$(Revision).zip"
+         ZipLevel="9" />
+    <Zip Files="@(UnitTest45Bin)"
+         Flatten="true"
+         WorkingDirectory="$(ReleaseDir)"
+         ZipFileName="$(ReleaseDir)\$(UnitTestProject).NET45.$(Major).$(Minor).$(Build).$(Revision).zip"
+         ZipLevel="9" />
+  </Target>
+
+  <Target Name="Release" DependsOnTargets="NuGet;CodePlex;Docs">
+    <Message Text="Building Release" />
+  </Target>
+</Project>

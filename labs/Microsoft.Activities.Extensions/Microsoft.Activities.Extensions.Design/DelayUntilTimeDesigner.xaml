@@ -1,0 +1,77 @@
+﻿<sap:ActivityDesigner x:Class="Microsoft.Activities.Extensions.Design.DelayUntilTimeDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:s="clr-namespace:System;assembly=mscorlib" 
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation" 
+                      xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" xmlns:Design="clr-namespace:Microsoft.Activities.Extensions.Design">
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+
+            <DataTemplate x:Key="Collapsed">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="5" Text="Delay Until " />
+                    <sapv:ExpressionTextBox HintText="Enter a Time" Expression="{Binding Path=ModelItem.Time, Mode=TwoWay, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In }" ExpressionType="s:TimeSpan" Grid.Row="0" Grid.Column="1" OwnerActivity="{Binding Path=ModelItem}" Width="300" Margin="0,5" MaxLines="1" />
+                </StackPanel>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="Expanded">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="5" Text="Delay Until " />
+                    <sapv:ExpressionTextBox HintText="Time" Expression="{Binding Path=ModelItem.Time, Mode=TwoWay, Converter={StaticResource ArgumentToExpressionConverter}, ConverterParameter=In }" ExpressionType="s:TimeSpan" Grid.Row="0" Grid.Column="1" OwnerActivity="{Binding Path=ModelItem}" Width="300" Margin="0,5" MaxLines="1" />
+                    <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="5" Text="On Days" />
+                    <WrapPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" Height="70" HorizontalAlignment="Left">
+                        <CheckBox IsChecked="{Binding Path=ViewModel.IsSundayChecked, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Design:DelayUntilTimeDesigner}}}" Content="{Binding Source={Design:LocalizedDayOfWeekExtension Day=Sunday}}" />
+                        <CheckBox IsChecked="{Binding Path=ViewModel.IsMondayChecked, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Design:DelayUntilTimeDesigner}}}" Content="{Binding Source={Design:LocalizedDayOfWeekExtension Day=Monday}}" />
+                        <CheckBox IsChecked="{Binding Path=ViewModel.IsTuesdayChecked, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Design:DelayUntilTimeDesigner}}}" Content="{Binding Source={Design:LocalizedDayOfWeekExtension Day=Tuesday}}" />
+                        <CheckBox IsChecked="{Binding Path=ViewModel.IsWednesdayChecked, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Design:DelayUntilTimeDesigner}}}" Content="{Binding Source={Design:LocalizedDayOfWeekExtension Day=Wednesday}}" />
+                        <CheckBox IsChecked="{Binding Path=ViewModel.IsThursdayChecked, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Design:DelayUntilTimeDesigner}}}" Content="{Binding Source={Design:LocalizedDayOfWeekExtension Day=Thursday}}" />
+                        <CheckBox IsChecked="{Binding Path=ViewModel.IsFridayChecked, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Design:DelayUntilTimeDesigner}}}" Content="{Binding Source={Design:LocalizedDayOfWeekExtension Day=Friday}}" />
+                        <CheckBox IsChecked="{Binding Path=ViewModel.IsSaturdayChecked, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Design:DelayUntilTimeDesigner}}}" Content="{Binding Source={Design:LocalizedDayOfWeekExtension Day=Saturday}}" />
+                    </WrapPanel>
+                </Grid>
+            </DataTemplate>
+
+            <Style x:Key="ExpandOrCollapsedStyle" TargetType="{x:Type ContentPresenter}">
+                <Setter Property="ContentTemplate" Value="{DynamicResource Expanded}" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=ShowExpanded}" Value="false">
+                        <Setter Property="ContentTemplate" Value="{DynamicResource Collapsed}" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+        </ResourceDictionary>               
+    </sap:ActivityDesigner.Resources>
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush>
+            <DrawingBrush.Drawing>
+                <ImageDrawing>
+                    <ImageDrawing.Rect>
+                        <Rect Location="0,0" Size="25,25" ></Rect>
+                    </ImageDrawing.Rect>
+                    <ImageDrawing.ImageSource>
+                        <BitmapImage UriSource="Images\DelayCheck.bmp" ></BitmapImage>
+                    </ImageDrawing.ImageSource>
+                </ImageDrawing>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+    
+    <Grid>
+        <ContentPresenter Style="{DynamicResource ExpandOrCollapsedStyle}" Content="{Binding}" />
+    </Grid>
+
+</sap:ActivityDesigner>

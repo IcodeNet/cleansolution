@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d726ed92-34c4-44f7-9610-0b3cefd209f5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8125/TestAssemblyResolution.xamlx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TestAssemblyResolution.xsd" MetadataType="Schema" ID="247cb413-3585-4635-a437-66db9bfdb65c" SourceId="1" SourceUrl="http://localhost:8125/TestAssemblyResolution.xamlx?xsd=xsd3" />
+    <MetadataFile FileName="TestAssemblyResolution1.xsd" MetadataType="Schema" ID="86db0454-b751-4d2d-a1de-0fca6b1692cc" SourceId="1" SourceUrl="http://localhost:8125/TestAssemblyResolution.xamlx?xsd=xsd0" />
+    <MetadataFile FileName="TestAssemblyResolution4.xsd" MetadataType="Schema" ID="ad984c3c-fbfa-4037-bb73-d649ba5a6475" SourceId="1" SourceUrl="http://localhost:8125/TestAssemblyResolution.xamlx?xsd=xsd4" />
+    <MetadataFile FileName="TestAssemblyResolution.wsdl" MetadataType="Wsdl" ID="63ce7e33-d314-4d4d-a9d9-bd8965818667" SourceId="1" SourceUrl="http://localhost:8125/TestAssemblyResolution.xamlx?wsdl" />
+    <MetadataFile FileName="TestAssemblyResolution2.xsd" MetadataType="Schema" ID="62b5896c-bb0e-46a8-a1d4-1e42fb98c0d3" SourceId="1" SourceUrl="http://localhost:8125/TestAssemblyResolution.xamlx?xsd=xsd1" />
+    <MetadataFile FileName="TestAssemblyResolution3.xsd" MetadataType="Schema" ID="60059702-1281-4aef-ad80-7aa96dfbb513" SourceId="1" SourceUrl="http://localhost:8125/TestAssemblyResolution.xamlx?xsd=xsd2" />
+    <MetadataFile FileName="TestAssemblyResolution.disco" MetadataType="Disco" ID="a38bb8ff-32eb-4203-9e0b-c46bc2c2d6a4" SourceId="1" SourceUrl="http://localhost:8125/TestAssemblyResolution.xamlx?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

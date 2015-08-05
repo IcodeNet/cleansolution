@@ -1,0 +1,9 @@
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\FullClean\1.0\\FullClean.dll
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\FullClean\1.0\\FullClean.pdb
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\FullClean\1.0\\CleanProject.exe
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\FullClean\1.0\\CmdLine.dll
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\FullClean\1.0\\FullClean.pkgdef
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\FullClean\1.0\\extension.vsixmanifest
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\FullClean\1.0\\Ionic.Zip.dll
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\FullClean\1.0\\CmdLine.pdb
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\FullClean\1.0\\CleanProject.pdb

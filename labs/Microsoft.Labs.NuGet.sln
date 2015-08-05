@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Activities.NuGet", "Microsoft.Activities\Microsoft.Activities.NuGet\Microsoft.Activities.NuGet.csproj", "{BC81735D-FF53-4995-97ED-2EC93366BAA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Activities.UnitTesting.NuGet", "Microsoft.Activities.UnitTesting\Microsoft.Activities.UnitTesting.NuGet\Microsoft.Activities.UnitTesting.NuGet.csproj", "{7B6EEFD0-E118-40C6-AD59-60A241C04ED4}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs07
+		SccProjectUniqueName0 = Microsoft.Activities\\Microsoft.Activities.NuGet\\Microsoft.Activities.NuGet.csproj
+		SccProjectName0 = Microsoft.Activities/Microsoft.Activities.NuGet
+		SccLocalPath0 = Microsoft.Activities\\Microsoft.Activities.NuGet
+		SccProjectUniqueName1 = Microsoft.Activities.UnitTesting\\Microsoft.Activities.UnitTesting.NuGet\\Microsoft.Activities.UnitTesting.NuGet.csproj
+		SccProjectName1 = Microsoft.Activities.UnitTesting/Microsoft.Activities.UnitTesting.NuGet
+		SccLocalPath1 = Microsoft.Activities.UnitTesting\\Microsoft.Activities.UnitTesting.NuGet
+		SccLocalPath2 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC81735D-FF53-4995-97ED-2EC93366BAA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC81735D-FF53-4995-97ED-2EC93366BAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC81735D-FF53-4995-97ED-2EC93366BAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC81735D-FF53-4995-97ED-2EC93366BAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B6EEFD0-E118-40C6-AD59-60A241C04ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B6EEFD0-E118-40C6-AD59-60A241C04ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B6EEFD0-E118-40C6-AD59-60A241C04ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B6EEFD0-E118-40C6-AD59-60A241C04ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

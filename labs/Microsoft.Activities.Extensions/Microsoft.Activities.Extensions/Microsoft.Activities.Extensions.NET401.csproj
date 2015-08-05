@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD2C29FC-7D93-4EBD-AF64-31601D1F8247}</ProjectGuid>
+    <ProjectTypeGuids>{32f31d43-81cc-4c15-9de6-3fc5453562b6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Activities.Extensions</RootNamespace>
+    <AssemblyName>Microsoft.Activities.Extensions</AssemblyName>
+    <TargetFrameworkVersion>v4.0.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <!--<CustomBeforeMicrosoftCommonTargets>$(LabDir)\MultiVersion.targets</CustomBeforeMicrosoftCommonTargets>-->
+    <CustomBeforeMicrosoftCommonTargets>$(LabDir)\MultiVersion.targets</CustomBeforeMicrosoftCommonTargets>
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>True</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>True</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>True</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>True</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>True</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>True</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>True</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>True</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>True</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>True</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>True</CodeContractsSuggestObjectInvariants>
+    <CodeContractsDisjunctiveRequires>True</CodeContractsDisjunctiveRequires>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>True</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile>..\..\baseline.xml</CodeContractsBaseLineFile>
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\NET401\Microsoft.Activities.Extensions.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Microsoft.Activities.Extensions.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Contracts|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug Contracts\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET401;NET40_OR_GREATER;NET401_OR_GREATER</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\NET401\Microsoft.Activities.Extensions.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>True</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsDisjunctiveRequires>False</CodeContractsDisjunctiveRequires>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>False</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>%28none%29</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.DurableInstancing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Labs.cs">
+      <Link>Labs.cs</Link>
+    </Compile>
+    <Compile Include="..\..\LabsAssemblyInfo.cs">
+      <Link>Properties\LabsAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\labsversion.cs">
+      <Link>Properties\labsversion.cs</Link>
+    </Compile>
+    <Compile Include="ActivityContextExtensions.cs" />
+    <Compile Include="ActivityXamlServicesEx.cs" />
+    <Compile Include="ArrayEx.cs" />
+    <Compile Include="BookmarkResumptionException.cs" />
+    <Compile Include="CodeActivityMetadataExtensions.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Diagnostics\TraceStringBuilder.cs" />
+    <Compile Include="DurableInstancing\DisposableInstanceHandle.cs" />
+    <Compile Include="DurableInstancing\SqlWorkflowInstanceStoreEx.cs" />
+    <Compile Include="DurableInstancing\SqlWorkflowInstanceStoreManager.cs" />
+    <Compile Include="DurableInstancing\SqlWorkflowInstanceStoreScript.cs" />
+    <Compile Include="ExceptionEx.cs" />
+    <Compile Include="Linq\ActivityStateRecordEnumerable.cs" />
+    <Compile Include="Linq\BookmarkInfoEnumerable.cs" />
+    <Compile Include="NativeActivityContextExtensions.cs" />
+    <Compile Include="Tracking\ActivityInfoEx.cs" />
+    <Compile Include="Tracking\ActivityInstanceStates.cs" />
+    <Compile Include="Tracking\ActivityScheduledQueryEx.cs" />
+    <Compile Include="Tracking\ActivityStateQueryEx.cs" />
+    <Compile Include="Tracking\BookmarkResumptionQueryEx.cs" />
+    <Compile Include="Tracking\CancelRequestedQueryEx.cs" />
+    <Compile Include="Tracking\CircularBuffer.cs" />
+    <Compile Include="Tracking\CustomTrackingQueryEx.cs" />
+    <Compile Include="Tracking\DictionaryEx.cs" />
+    <Compile Include="Tracking\EnumerableEx.cs" />
+    <Compile Include="Tracking\FaultPropagationQueryEx.cs" />
+    <Compile Include="Tracking\HistoryList.cs" />
+    <Compile Include="Tracking\IStateMachineInfo.cs" />
+    <Compile Include="Tracking\ITraceable.cs" />
+    <Compile Include="Tracking\ObservableStateMachineInfo.cs" />
+    <Compile Include="Tracking\StateMachineInfo.cs" />
+    <Compile Include="Tracking\StateMachineInfoSurrogated.cs" />
+    <Compile Include="Tracking\StateMachineList.cs" />
+    <Compile Include="Tracking\StateTracker.cs" />
+    <Compile Include="Tracking\StateTrackerSurrogated.cs" />
+    <Compile Include="Tracking\StateTrackerSurrogateSelector.cs" />
+    <Compile Include="Tracking\TrackingOption.cs" />
+    <Compile Include="Tracking\TrackingProfileExtensions.cs" />
+    <Compile Include="Tracking\TrackingQueryEx.cs" />
+    <Compile Include="Tracking\TransitionList.cs" />
+    <Compile Include="Tracking\WorkflowInstanceQueryEx.cs" />
+    <Compile Include="Tracking\WorkflowXamlFileType.cs" />
+    <Compile Include="Tracking\XamlHelper.cs" />
+    <Compile Include="WorkflowApplicationCache.cs" />
+    <Compile Include="WorkflowApplicationObserver.cs" />
+    <Compile Include="WorkflowInstanceExtensionManagerEx.cs" />
+    <Compile Include="WorkflowTrace.cs" />
+    <Compile Include="Diagnostics\NamespaceDoc.cs" />
+    <Compile Include="Diagnostics\TraceTrackingParticipant.cs" />
+    <Compile Include="Diagnostics\WorkflowServiceTraceBehavior.cs" />
+    <Compile Include="Diagnostics\WorkflowServiceTraceElement.cs" />
+    <Compile Include="NativeActivityMetadataExtensions.cs" />
+    <Compile Include="ReflectionObject.cs" />
+    <Compile Include="ServiceModel\ConfigurationElementCollection.cs" />
+    <Compile Include="ServiceModel\StateMachineTrackingElement.cs" />
+    <Compile Include="ServiceModel\StateMachineTrackingBehavior.cs" />
+    <Compile Include="ServiceModel\IConfigurationElement.cs" />
+    <Compile Include="ServiceModel\NamespaceDoc.cs" />
+    <Compile Include="ServiceModel\SilverlightFaultBehavior.cs" />
+    <Compile Include="ServiceModel\SilverlightFaultElement.cs" />
+    <Compile Include="ServiceModel\WorkflowExtensionConfigElement.cs" />
+    <Compile Include="ServiceModel\WorkflowExtensionsBehavior.cs" />
+    <Compile Include="ServiceModel\WorkflowExtensionsElement.cs" />
+    <Compile Include="SR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Statements\AddToDictionary.cs" />
+    <Compile Include="Statements\ClearDictionary.cs" />
+    <Compile Include="Statements\GetFromDictionary.cs" />
+    <Compile Include="Statements\GetInstanceID.cs" />
+    <Compile Include="Statements\LoadAndInvokeWorkflow.cs" />
+    <Compile Include="Statements\LoadAssembly.cs" />
+    <Compile Include="Statements\NamespaceDoc.cs" />
+    <Compile Include="Statements\RemoveFromDictionary.cs" />
+    <Compile Include="Statements\ValueExistsInDictionary.cs" />
+    <Compile Include="Statements\KeyExistsInDictionary.cs" />
+    <Compile Include="Statements\LoadActivity.cs" />
+    <Compile Include="Occurance.cs" />
+    <Compile Include="InputDictionary.cs" />
+    <Compile Include="OutputDictionary.cs" />
+    <Compile Include="Statements\DelayUntilDateTime.cs" />
+    <Compile Include="Statements\DelayUntilTime.cs" />
+    <Compile Include="Statements\InvokeWorkflow.cs" />
+    <Compile Include="Tracking\ActivityScheduledRecordExtensions.cs" />
+    <Compile Include="Tracking\ActivityStateRecordExtensions.cs" />
+    <Compile Include="Tracking\BookmarkResumptionRecordExtensions.cs" />
+    <Compile Include="Tracking\CancelRequestedRecordExtensions.cs" />
+    <Compile Include="Tracking\CustomTrackingRecordExtensions.cs" />
+    <Compile Include="Tracking\FaultPropagationRecordExtensions.cs" />
+    <Compile Include="Tracking\FileTracker.cs" />
+    <Compile Include="Tracking\ICustomTrackingTrace.cs" />
+    <Compile Include="Tracking\ListExtensions.cs" />
+    <Compile Include="Tracking\ListTrackingParticipant.cs" />
+    <Compile Include="Tracking\NamespaceDoc.cs" />
+    <Compile Include="Tracking\ReceiveMessageRecordExtensions.cs" />
+    <Compile Include="Tracking\SendMessageRecordExtensions.cs" />
+    <Compile Include="Tracking\StateMachineStateRecordExtensions.cs" />
+    <Compile Include="Tracking\StateTrackerPersistence.cs" />
+    <Compile Include="Tracking\TrackingRecordExtensions.cs" />
+    <Compile Include="Tracking\TypedTrackingParticipant.cs" />
+    <Compile Include="Tracking\WorkflowInstanceAbortedRecordExtensions.cs" />
+    <Compile Include="Tracking\WorkflowInstanceRecordExtensions.cs" />
+    <Compile Include="Tracking\WorkflowInstanceRecordState.cs" />
+    <Compile Include="Tracking\WorkflowInstanceSuspendedRecordExtensions.cs" />
+    <Compile Include="Tracking\WorkflowInstanceTerminatedRecordExtensions.cs" />
+    <Compile Include="Tracking\WorkflowInstanceUnhandledExceptionRecordExtensions.cs" />
+    <Compile Include="WorkflowAbortedEpisodeResult.cs" />
+    <Compile Include="WorkflowApplicationExtensions.cs" />
+    <Compile Include="WorkflowApplicationIdleEventArgsEx.cs" />
+    <Compile Include="InArgumentExtensions.cs" />
+    <Compile Include="NamespaceDoc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StrictXamlHelper.cs" />
+    <Compile Include="WorkflowArguments.cs" />
+    <Compile Include="WorkflowCompletedEpisodeResult.cs" />
+    <Compile Include="WorkflowEpisode.cs" />
+    <Compile Include="WorkflowEpisodeResult.cs" />
+    <Compile Include="WorkflowIdleEpisodeResult.cs" />
+    <Compile Include="WorkflowTraceOptions.cs" />
+    <Compile Include="XAMLAssemblyResolutionOption.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\DelayCheck.bmp" />
+    <EmbeddedResource Include="SR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Microsoft.Activities.Extensions.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

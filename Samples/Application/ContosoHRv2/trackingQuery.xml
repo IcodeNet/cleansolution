@@ -1,0 +1,34 @@
+<trackingProfile name="CustomOrderServiceProfile - Windows PowerShell Config">
+   <workflow activityDefinitionId="*">
+      <workflowInstanceQueries>
+         <workflowInstanceQuery>
+            <states>
+               <state name="*" />
+            </states>
+         </workflowInstanceQuery>
+      </workflowInstanceQueries>
+      
+      <activityStateQueries>
+         <activityStateQuery activityName="Receive Human Screening">
+            <states>
+               <state name="Closed" />
+            </states>
+            <variables>
+               <variable name="ApplicationRequest.Resume.Name"/>
+            </variables>
+         </activityStateQuery>
+      </activityStateQueries>
+
+      <faultPropagationQueries>
+         <faultPropagationQuery faultSourceActivityName="*" faultHandlerActivityName="*" />
+      </faultPropagationQueries>
+
+      <bookmarkResumptionQueries>
+         <bookmarkResumptionQuery name="*" />
+      </bookmarkResumptionQueries>
+
+      <customTrackingQueries>
+         <customTrackingQuery name="*" activityName="*" />
+      </customTrackingQueries>
+   </workflow>
+</trackingProfile>

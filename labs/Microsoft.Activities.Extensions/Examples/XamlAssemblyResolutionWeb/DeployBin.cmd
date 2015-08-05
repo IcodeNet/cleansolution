@@ -1,0 +1,1 @@
+copy bin\ActivityLibrary1.dll C:\inetpub\wwwroot\XamlAssemblyResolutionWeb\bin
