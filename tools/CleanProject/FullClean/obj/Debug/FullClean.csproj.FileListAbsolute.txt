@@ -1,6 +1,6 @@
-C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\FullClean.dll
-C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\FullClean.pkgdef
-C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\FullClean.vsix
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\IcodeNet.VSIntegration.dll
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\IcodeNet.VSIntegration.pkgdef
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\IcodeNet.VSIntegration.vsix
 C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\extension.vsixmanifest
 C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\CleanProject.exe
 C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\CmdLine.dll
@@ -62,8 +62,10 @@ C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\VSCT.r
 C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\VSCT.write.1.tlog
 C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\CtoResourceMerger.cache
 C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\VSPackage.resources.original
-C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\FullClean.dll
-C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\FullClean.pdb
-C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\FullClean.pkgdef
-C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\FullClean.latest.pkgdef
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\IcodeNet.VSIntegration.dll
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\IcodeNet.VSIntegration.pdb
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\IcodeNet.VSIntegration.pkgdef
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\IcodeNet.VSIntegration.latest.pkgdef
 C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\obj\Debug\extension.vsixmanifest
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\Licence.txt
+C:\Users\vyront\Downloads\wf-80373\tools\CleanProject\FullClean\bin\Debug\blogicode2.png

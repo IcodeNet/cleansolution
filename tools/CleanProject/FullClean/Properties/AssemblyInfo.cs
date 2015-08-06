@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FullClean")]
+[assembly: AssemblyTitle("IcodeNet.VSIntegration")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FullClean")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyProduct("IcodeNet.VSIntegration")]
+[assembly: AssemblyCopyright("IcodeNet")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

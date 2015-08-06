@@ -1,8 +1,10 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
   <Metadata>
-    <Identity Id="FullClean.    .c9e2b854-cfb0-42e6-ab9d-6a43cc263236" Version="1.0" Language="en-US" Publisher=" Byron Thanopoulos" />
-    <DisplayName>FullClean</DisplayName>
-    <Description xml:space="preserve">Empty VSIX Project.</Description>
+    <Identity Id="IcodeNet.    .c9e2b854-cfb0-42e6-ab9d-6a43cc263236" Version="1.0" Language="en-US" Publisher=" Byron Thanopoulos" />
+    <DisplayName>IcodeNet</DisplayName>
+    <Description xml:space="preserve">KSS Tools and Utilities </Description>
+    <License>Licence.txt</License>
+    <Icon>blogicode2.png</Icon>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
@@ -12,6 +14,6 @@
     <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" Version="[14.0]" />
   </Dependencies>
   <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="FullClean.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="IcodeNet.VSIntegration.pkgdef" />
   </Assets>
 </PackageManifest>

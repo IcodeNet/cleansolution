@@ -1,0 +1,5 @@
+This will install just a utility that fully cleans - deletes bin ,obj, _Resharper folders under the solution directory.
+
+It has an options under Tools --> Options --> KSS which is still under development n order to allow for a complete set of utilities to sit under it.
+
+:)

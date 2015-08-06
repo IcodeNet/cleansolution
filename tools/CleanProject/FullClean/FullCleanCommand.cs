@@ -1,24 +1,24 @@
 ﻿//------------------------------------------------------------------------------
-// <copyright file="FullCleanCommand.cs" company="KSS">
-//     Copyright (c) KSS.  All rights reserved.
+// <copyright file="FullCleanCommand.cs" company="ICodeNet">
+//     Copyright (c) ICodeNet.  All rights reserved.
 // </copyright>
 //------------------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Globalization;
-using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
 using System.IO;
 using System.Linq;
-using System.Windows.Documents;
+using System.Text;
 using CleanProject;
 using EnvDTE;
-using EnvDTE80;
+using IcodeNet.Helpers;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using Process = System.Diagnostics.Process;
 
-namespace FullClean
+namespace IcodeNet
 {
     /// <summary>
     /// Command handler
@@ -54,7 +54,8 @@ namespace FullClean
 
             this.package = package;
 
-            OleMenuCommandService commandService = this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
+            OleMenuCommandService commandService =
+                this.ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (commandService != null)
             {
                 var menuCommandID = new CommandID(CommandSet, CommandId);
@@ -66,21 +67,14 @@ namespace FullClean
         /// <summary>
         /// Gets the instance of the command.
         /// </summary>
-        public static FullCleanCommand Instance
-        {
-            get;
-            private set;
-        }
+        public static FullCleanCommand Instance { get; private set; }
 
         /// <summary>
         /// Gets the service provider from the owner package.
         /// </summary>
         private IServiceProvider ServiceProvider
         {
-            get
-            {
-                return this.package;
-            }
+            get { return this.package; }
         }
 
         /// <summary>
@@ -101,64 +95,126 @@ namespace FullClean
         /// <param name="e">Event args.</param>
         private void StartClean(object sender, EventArgs e)
         {
-            CreatePane(new Guid(), "Full Clean Command", true, false);
+            //CreatePane(new Guid(), "Full Clean Command", true, false);
 
-            Process proc = new Process();
-            proc.StartInfo.FileName = typeof(CleanOptions).Assembly.Location;
+            Process process = new Process();
+            process.StartInfo.FileName = typeof(CleanOptions).Assembly.Location;
 
 
-            DTE dte = (DTE)ServiceProvider.GetService(typeof(DTE));
-
-            if (!String.IsNullOrEmpty(dte.Solution.FullName))
+            ToolsCommandPackage.dte.StatusBar.Animate(true, vsStatusAnimation.vsStatusAnimationBuild);
+            try
             {
-
-                var props = dte.Properties["KSS Options", "KSS Clean Solution Options"];
-                // EnvDTE.Properties props = dte.Properties["TextEditor", "CSharp"];
-
-
-                string[] directories = (string[])props.Item("Directories").Value;
-                string[] excludedDirectories = (string[])props.Item("ExcludeDirectories").Value;
-
-                string[] solutionDir =  directories.Any()? directories.ToArray() : new string[]{};
-
-                if (!solutionDir.Any())
+                ProcessStartInfo processStartInfo = new ProcessStartInfo()
                 {
-                    solutionDir = new[] { System.IO.Path.GetDirectoryName(dte.Solution.FullName) };
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    StandardOutputEncoding = Encoding.UTF8,
+                    StandardErrorEncoding = Encoding.UTF8,
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    // WorkingDirectory = (fromRoot ? SolutionHelpers.GetRootFolder(ToolsCommandPackage.dte) : Path.GetDirectoryName(SolutionHelpers.GetSourceFilePath())),
+                    // FileName = "cmd",
+                    FileName = typeof(CleanOptions).Assembly.Location
+                    //Arguments = argument
+                };
+                
+                /*
+                ProcessStartInfo processStartInfo1 = processStartInfo;
+                Process process = new Process()
+                {
+                    StartInfo = processStartInfo1,
+                    EnableRaisingEvents = true
+                };*/
+                
+                if (!String.IsNullOrEmpty(ToolsCommandPackage.dte.Solution.FullName))
+                {
+
+                    var props = ToolsCommandPackage.dte.Properties["KSS Tools", "General"];
+
+                    string[] directories = (string[])props.Item("Directories").Value;
+                    string[] excludedDirectories = (string[])props.Item("ExcludeDirectories").Value;
+                    string[] removeDirectories = (string[])props.Item("RemoveDirectories").Value;
+
+                    string[] solutionDir = directories.Any() ? directories.ToArray() : new string[] { };
+
+                    if (!solutionDir.Any())
+                    {
+                        solutionDir = new[] { System.IO.Path.GetDirectoryName(ToolsCommandPackage.dte.Solution.FullName) };
+
+                    }
+
+                    process.StartInfo.Arguments = @"/v ";
+                    var targetDirectoriesArguments = String.Empty;
+                    var excludedDirectoriesArguments = String.Empty;
+                    var removeDirectoriesArguments = String.Empty;
+
+                    foreach (var targetDirectory in solutionDir)
+                    {
+                        targetDirectoriesArguments += $@" /D:""{targetDirectory}""   ";
+                    }
+
+                    foreach (var excludedDirectory in excludedDirectories)
+                    {
+                        excludedDirectoriesArguments += $@"/XD:""{excludedDirectory}""   ";
+                    }
+
+                    foreach (var removeDirectory in removeDirectories)
+                    {
+                        removeDirectoriesArguments += $@"/RD:""{removeDirectory}""   ";
+                    }
+
+                    process.StartInfo.Arguments += targetDirectoriesArguments;
+                    process.StartInfo.Arguments += excludedDirectoriesArguments;
+                    process.StartInfo.Arguments += removeDirectoriesArguments;
+
+                    Process process1 = process;
+
+
+                    OutputHelpers.Output(string.Concat("Executing ", processStartInfo.FileName, " \r\n\r\n"), true);
+
+                    process1.OutputDataReceived += new DataReceivedEventHandler((object sendingProcess, DataReceivedEventArgs outLine) => OutputHelpers.Output(string.Concat(outLine.Data, "\r\n"), false));
+                    process1.ErrorDataReceived += new DataReceivedEventHandler((object sendingProcess, DataReceivedEventArgs outLine) => OutputHelpers.Output(string.Concat(outLine.Data, "\r\n"), false));
+
+                    process1.Exited += new EventHandler((object x, EventArgs y) =>
+                    {/*                ToolsCommandPackage.processes.Remove(cmd);                cmd.Checked = false;                */
+                        ToolsCommandPackage.dte.StatusBar.Animate(false, vsStatusAnimation.vsStatusAnimationBuild);
+                    });
+
+
+                    //process1.Start();
+                    process.Start();
+
+                    process1.BeginOutputReadLine();
+                    process1.BeginErrorReadLine();
+                    // cmd.Checked = true;
+                    //ToolsCommandPackage.processes.Add(cmd, process1);
+
+                }
+                else
+                {
+                    string message = string.Format(CultureInfo.CurrentCulture, "Please Open a solution and invoke the command again!", this.GetType().FullName);
+                    string title = "No Solution is open in the IDE.";
+
+                    // Show a message box to prove we were here
+                    VsShellUtilities.ShowMessageBox(
+                        this.ServiceProvider,
+                        message,
+                        title,
+                        OLEMSGICON.OLEMSGICON_INFO,
+                        OLEMSGBUTTON.OLEMSGBUTTON_OK,
+                        OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
                 }
 
-                proc.StartInfo.Arguments = String.Format(@"/v /D:""{0}""  ", String.Join(" ", solutionDir));
-
-                var excludedDirectoriesArguments = String.Empty;
-
-                foreach (var excludedDirectory in excludedDirectories)
-                {
-                    excludedDirectoriesArguments += String.Format(@"/XD:""{0}""   ", excludedDirectory);
-                }
-
-                proc.StartInfo.Arguments += excludedDirectoriesArguments;
-
-                proc.Start();
-
-
             }
-            else
+            catch (Exception exception)
             {
-                string message = string.Format(CultureInfo.CurrentCulture, "Please Open a solution and invoke the command again!", this.GetType().FullName);
-                string title = "No Solution is open in the IDE.";
-
-                // Show a message box to prove we were here
-                VsShellUtilities.ShowMessageBox(
-                    this.ServiceProvider,
-                    message,
-                    title,
-                    OLEMSGICON.OLEMSGICON_INFO,
-                    OLEMSGBUTTON.OLEMSGBUTTON_OK,
-                    OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
+                OutputHelpers.Output(exception.Message, false);
             }
+
         }
 
-        void CreatePane(Guid paneGuid, string title,
-      bool visible, bool clearWithSolution)
+        private void CreatePane(Guid paneGuid, string title,
+            bool visible, bool clearWithSolution)
         {
             IVsOutputWindow output =
                 (IVsOutputWindow)ServiceProvider.GetService(typeof(SVsOutputWindow));
@@ -176,5 +232,6 @@ namespace FullClean
 
             pane.OutputString("Includes output from the 'Full Clean Command' \n");
         }
+
     }
 }
