@@ -233,7 +233,7 @@ namespace CleanProject
         }
 
         /// <summary>
-        /// The get long path name.
+        /// The get long path name.      
         /// </summary>
         /// <param name="path">
         /// The path. 

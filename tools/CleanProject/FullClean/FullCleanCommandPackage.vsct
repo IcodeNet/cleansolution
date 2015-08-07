@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+  <!--VSCT XML Schema Reference HELP
+  https://msdn.microsoft.com/en-us/library/bb165416.aspx-->
+
   <!--  This is the file that defines the actual layout and type of the commands.
         It is divided in different sections (e.g. command definition, command
         placement, ...), with each defining a specific set of properties.
@@ -31,6 +34,11 @@
     group; your package should define its own command set in order to avoid collisions
     with command ids defined by other packages. -->
 
+	<!--A standard menu must have a group on the Visual Studio menu bar as its parent. 
+	For a submenu, the parent must be a group on another menu (or on a toolbar or other menu type).
+	For a menu or submenu to be displayed, it must host a group that contains at least one active command,
+	or have the AlwaysCreate command flag set.-->
+	
 	  <Menus>
 		  <Menu guid="guidFullCleanCommandPackageCmdSet" id="TopLevelMenu" priority="0x700" type="Menu">
 			  <Parent guid="guidSHLMainMenu"
@@ -43,12 +51,14 @@
 		  
 		  
 		  <Menu guid="guidFullCleanCommandPackageCmdSet" id="SubMenuMenu" priority="0x800" type="Menu">
-			  <Parent guid="guidFullCleanCommandPackageCmdSet"
-					  id="MyMenuGroup" />
+			<Parent guid="guidFullCleanCommandPackageCmdSet" id="MyMenuGroup" />
+			<CommandFlag >AlwaysCreate </CommandFlag>
+			<CommandFlag>IconAndText</CommandFlag>
 			  <Strings>
 				  <ButtonText>Utilities</ButtonText>
 				  <CommandName>Utilities</CommandName>
 			  </Strings>
+		
 		  </Menu>
 	  </Menus>
 
@@ -62,7 +72,7 @@
       </Group>
     </Groups>-->
 
-   <Groups>
+	<Groups>
 
 		  <Group guid="guidFullCleanCommandPackageCmdSet" id="MyMenuGroup" priority="0x0600">
 			  <Parent guid="guidFullCleanCommandPackageCmdSet" id="TopLevelMenu"/>

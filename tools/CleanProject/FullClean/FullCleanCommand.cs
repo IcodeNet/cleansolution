@@ -2,7 +2,25 @@
 // <copyright file="FullCleanCommand.cs" company="ICodeNet">
 //     Copyright (c) ICodeNet.  All rights reserved.
 // </copyright>
-//------------------------------------------------------------------------------
+
+//  Commands are functions that accomplish tasks, such as printing a document, refreshing a view, or creating a new file.
+//  When you extend Visual Studio, you can create commands and register them with the Visual Studio shell.
+//  You can specify how these commands will appear in the IDE, for example,
+//  on a menu or toolbar.Typically a custom command appears on the Tools menu, 
+//  and a command for displaying a tool window would appear on the Other Windows submenu of the View menu.
+
+//  When you create a command, you must also create an event handler for it.
+//  The event handler determines when the command is visible or enabled, 
+//  lets you modify its text, and guarantees that the command responds appropriately when it is activated.
+
+//  In most instances,
+//  the IDE handles commands by using the IOleCommandTarget interface. 
+//  Commands in Visual Studio are handled starting with the innermost command context,
+//  based on the local selection, and proceeding to the outermost context,
+//  based on the global selection.
+
+//  Commands added to the main menu are immediately available for scripting.
+//  ------------------------------------------------------------------------------
 
 using System;
 using System.ComponentModel.Design;
@@ -144,7 +162,7 @@ namespace IcodeNet
                     }
 
                     // declare the process
-                    Process process = new Process ();
+                    Process process = new Process();
 
                     if (verbose)
                     {
@@ -193,7 +211,7 @@ namespace IcodeNet
                     process.StartInfo.Arguments += targetDirectoriesArguments;
                     process.StartInfo.Arguments += excludedDirectoriesArguments;
                     process.StartInfo.Arguments += removeDirectoriesArguments;
- 
+
                     OutputHelpers.Output(string.Concat("Executing ", process.StartInfo.FileName, " \r\n\r\n"), true);
 
                     process.OutputDataReceived += new DataReceivedEventHandler((object sendingProcess, DataReceivedEventArgs outLine) => OutputHelpers.Output(string.Concat(outLine.Data, "\r\n"), false));
