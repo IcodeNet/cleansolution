@@ -32,7 +32,7 @@ namespace CleanProject
         /// The default remove dirs.
         /// </summary>
        // private static readonly string[] DefaultRemoveDirs = { "bin", "obj", "TestResults", "_ReSharper*", "sql", "logs", "packages" };
-        private static readonly string[] DefaultRemoveDirs = { "bin", "obj", "TestResults", "_ReSharper*" };
+        private static readonly string[] DefaultRemoveDirs = { "bin", "obj", "TestResults" };
 
         /// <summary>
         /// The default remove files.

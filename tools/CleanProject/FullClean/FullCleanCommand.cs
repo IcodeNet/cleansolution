@@ -97,43 +97,24 @@ namespace IcodeNet
         {
             //CreatePane(new Guid(), "Full Clean Command", true, false);
 
-            Process process = new Process();
-            process.StartInfo.FileName = typeof(CleanOptions).Assembly.Location;
+            // Process process = new Process();
+            // process.StartInfo.FileName = typeof(CleanOptions).Assembly.Location;
 
 
-            ToolsCommandPackage.dte.StatusBar.Animate(true, vsStatusAnimation.vsStatusAnimationBuild);
+            ToolsCommandPackage.dte.StatusBar.Animate(true, vsStatusAnimation.vsStatusAnimationGeneral);
             try
             {
-                ProcessStartInfo processStartInfo = new ProcessStartInfo()
-                {
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    StandardOutputEncoding = Encoding.UTF8,
-                    StandardErrorEncoding = Encoding.UTF8,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    // WorkingDirectory = (fromRoot ? SolutionHelpers.GetRootFolder(ToolsCommandPackage.dte) : Path.GetDirectoryName(SolutionHelpers.GetSourceFilePath())),
-                    // FileName = "cmd",
-                    FileName = typeof(CleanOptions).Assembly.Location
-                    //Arguments = argument
-                };
-                
-                /*
-                ProcessStartInfo processStartInfo1 = processStartInfo;
-                Process process = new Process()
-                {
-                    StartInfo = processStartInfo1,
-                    EnableRaisingEvents = true
-                };*/
-                
                 if (!String.IsNullOrEmpty(ToolsCommandPackage.dte.Solution.FullName))
                 {
 
-                    var props = ToolsCommandPackage.dte.Properties["KSS Tools", "General"];
+                    var props = ToolsCommandPackage.dte.Properties["KSS Tools", "Full Clean Solution"];
 
                     string[] directories = (string[])props.Item("Directories").Value;
                     string[] excludedDirectories = (string[])props.Item("ExcludeDirectories").Value;
                     string[] removeDirectories = (string[])props.Item("RemoveDirectories").Value;
+                    bool quietMode = (bool)props.Item("QuietMode").Value;
+                    bool verbose = (bool)props.Item("Verbose").Value;
+                    bool windowsMode = (bool)props.Item("WindowsMode").Value;
 
                     string[] solutionDir = directories.Any() ? directories.ToArray() : new string[] { };
 
@@ -143,7 +124,6 @@ namespace IcodeNet
 
                     }
 
-                    process.StartInfo.Arguments = @"/v ";
                     var targetDirectoriesArguments = String.Empty;
                     var excludedDirectoriesArguments = String.Empty;
                     var removeDirectoriesArguments = String.Empty;
@@ -163,31 +143,79 @@ namespace IcodeNet
                         removeDirectoriesArguments += $@"/RD:""{removeDirectory}""   ";
                     }
 
+                    // declare the process
+                    Process process = new Process ();
+
+                    if (verbose)
+                    {
+                        process.StartInfo.Arguments = @" /V ";
+                    }
+
+                    if (windowsMode)
+                    {
+                        process.StartInfo.Arguments += @" /W ";
+                    }
+
+
+                    if (quietMode)
+                    {
+                        //https://stackoverflow.com/questions/1700695/getting-output-from-one-executable-in-an-other-one/1700708#1700708
+                        ProcessStartInfo processStartInfo = new ProcessStartInfo()
+                        {
+                            RedirectStandardOutput = true,
+                            RedirectStandardError = true,
+                            StandardOutputEncoding = Encoding.UTF8,
+                            StandardErrorEncoding = Encoding.UTF8,
+                            UseShellExecute = false,
+                            CreateNoWindow = true,
+                            // WorkingDirectory = (fromRoot ? SolutionHelpers.GetRootFolder(ToolsCommandPackage.dte) : Path.GetDirectoryName(SolutionHelpers.GetSourceFilePath())),
+                            // FileName = "cmd",
+                            FileName = typeof(CleanOptions).Assembly.Location
+                            //Arguments = argument
+                        };
+
+                        ProcessStartInfo processStartInfo1 = processStartInfo;
+
+
+
+                        process.StartInfo = processStartInfo1;
+                        process.EnableRaisingEvents = true;
+
+                        process.StartInfo.Arguments += @" /Q";
+                    }
+                    else
+                    {
+                        process.StartInfo.FileName = typeof(CleanOptions).Assembly.Location;
+                    }
+
+
+
                     process.StartInfo.Arguments += targetDirectoriesArguments;
                     process.StartInfo.Arguments += excludedDirectoriesArguments;
                     process.StartInfo.Arguments += removeDirectoriesArguments;
+ 
+                    OutputHelpers.Output(string.Concat("Executing ", process.StartInfo.FileName, " \r\n\r\n"), true);
 
-                    Process process1 = process;
+                    process.OutputDataReceived += new DataReceivedEventHandler((object sendingProcess, DataReceivedEventArgs outLine) => OutputHelpers.Output(string.Concat(outLine.Data, "\r\n"), false));
+                    process.ErrorDataReceived += new DataReceivedEventHandler((object sendingProcess, DataReceivedEventArgs outLine) => OutputHelpers.Output(string.Concat(outLine.Data, "\r\n"), true));
 
+                    process.Exited += new EventHandler((object x, EventArgs y) =>
+                    {
+                        try
+                        {
+                            ToolsCommandPackage.dte.StatusBar.Animate(false, vsStatusAnimation.vsStatusAnimationGeneral);
 
-                    OutputHelpers.Output(string.Concat("Executing ", processStartInfo.FileName, " \r\n\r\n"), true);
-
-                    process1.OutputDataReceived += new DataReceivedEventHandler((object sendingProcess, DataReceivedEventArgs outLine) => OutputHelpers.Output(string.Concat(outLine.Data, "\r\n"), false));
-                    process1.ErrorDataReceived += new DataReceivedEventHandler((object sendingProcess, DataReceivedEventArgs outLine) => OutputHelpers.Output(string.Concat(outLine.Data, "\r\n"), false));
-
-                    process1.Exited += new EventHandler((object x, EventArgs y) =>
-                    {/*                ToolsCommandPackage.processes.Remove(cmd);                cmd.Checked = false;                */
-                        ToolsCommandPackage.dte.StatusBar.Animate(false, vsStatusAnimation.vsStatusAnimationBuild);
+                        }
+                        catch (Exception)
+                        {
+                            // silent
+                        }
                     });
 
-
-                    //process1.Start();
                     process.Start();
 
-                    process1.BeginOutputReadLine();
-                    process1.BeginErrorReadLine();
-                    // cmd.Checked = true;
-                    //ToolsCommandPackage.processes.Add(cmd, process1);
+                    process.BeginOutputReadLine();
+                    process.BeginErrorReadLine();
 
                 }
                 else

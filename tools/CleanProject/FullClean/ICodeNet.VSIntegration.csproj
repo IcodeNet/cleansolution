@@ -24,7 +24,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IcodeNet</RootNamespace>
-    <AssemblyName>IcodeNet.VSIntegration</AssemblyName>
+    <AssemblyName>ICodeNet.VSIntegration</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
@@ -52,11 +52,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="FullCleanCommand.cs" />
+    <Compile Include="OptionPages\ConnectionStringsOptionPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OptionPages\GenerateNUPkgOptionPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Helpers\OutputHelpers.cs" />
     <Compile Include="Helpers\ProcessHelpers.cs" />
     <Compile Include="Helpers\SolutionHelpers.cs" />
     <Compile Include="ToolsCommandPackage.cs" />
-    <Compile Include="OptionPage.cs">
+    <Compile Include="OptionPages\CleanSolutionOptionPage.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

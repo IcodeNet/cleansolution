@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmdLine", "..\CmdLine\CmdLine\CmdLine.csproj", "{ED76BEBC-F835-4FFF-B7E3-3E8A96B87BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullClean", "FullClean\FullClean.csproj", "{4910B7D9-17A2-490E-B5AA-F3D749436B3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICodeNet.VSIntegration", "FullClean\ICodeNet.VSIntegration.csproj", "{4910B7D9-17A2-490E-B5AA-F3D749436B3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

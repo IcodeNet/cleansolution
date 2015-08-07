@@ -140,10 +140,10 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)..
-copy $(TargetDir)*.dll $(SolutionDir)..
-copy $(TargetPath) c:\tools
-copy $(TargetDir)*.dll c:\tools</PostBuildEvent>
+    <PostBuildEvent>Rem copy $(TargetPath) $(SolutionDir)..
+Rem copy $(TargetDir)*.dll $(SolutionDir)..
+Rem copy $(TargetPath) c:\tools
+Rem copy $(TargetDir)*.dll c:\tools</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

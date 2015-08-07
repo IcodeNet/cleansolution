@@ -1,5 +1,8 @@
-This will install just a utility that fully cleans - deletes bin ,obj, _Resharper folders under the solution directory.
+This will install just a utility that by default fully deletes bin ,obj, folders and subfolders under the solution directory.
+It will by default redirect the output to the VS Output window (QuietMode).  
 
-It has an options under Tools --> Options --> KSS which is still under development n order to allow for a complete set of utilities to sit under it.
+It has an options under Tools --> Options --> KSS 
+This is still under development in order to allow for a complete set of Tools to sit under it.
+For the Clean Solution Tool - only the top part of the options in Options Page are currently implemented. 
 
 :)

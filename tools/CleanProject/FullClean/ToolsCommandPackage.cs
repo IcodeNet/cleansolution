@@ -48,7 +48,9 @@ namespace IcodeNet
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(ToolsCommandPackage.PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
-    [ProvideOptionPage(typeof(OptionPage),"KSS Tools", "General",0, 0, true)]
+    [ProvideOptionPage(typeof(CleanSolutionOptionPage),"KSS Tools", "Full Clean Solution",0, 0, true)]
+    [ProvideOptionPage(typeof(GenerateNUPkgOptionPage),"KSS Tools", "Nuget",1, 1, true)]
+    [ProvideOptionPage(typeof(ConnectionStringsOptionPage),"KSS Tools", "Connection Strings",2, 2, true)]
     public sealed class ToolsCommandPackage : Package
     {
         /// <summary>
@@ -72,11 +74,11 @@ namespace IcodeNet
 
         private bool isChild;
 
-        private OptionPage Options
+        private CleanSolutionOptionPage CleanSolutionOptionPage
         {
             get
             {
-                return (OptionPage)base.GetDialogPage(typeof(OptionPage));
+                return (CleanSolutionOptionPage)base.GetDialogPage(typeof(CleanSolutionOptionPage));
             }
         }
 
@@ -115,7 +117,7 @@ namespace IcodeNet
             }
 
 
-            var dialogPage = GetDialogPage(typeof(OptionPage)) as OptionPage;
+            var dialogPage = GetDialogPage(typeof(CleanSolutionOptionPage)) as CleanSolutionOptionPage;
 
             var dialogDirectories = new List<string>(); 
             var dialogExcludedDirectories = new List<string>(); 
@@ -135,7 +137,10 @@ namespace IcodeNet
                 }
 
                 dialogPage.Verbose = true;
+                dialogPage.QuietMode = true;
 
+                dialogExcludedDirectories.Add("KssRetail");
+                dialogExcludedDirectories.Add("Coypu Source");
                 dialogExcludedDirectories.Add("sql");
                 dialogExcludedDirectories.Add("packages");
                 dialogExcludedDirectories.Add("logs");
@@ -191,7 +196,7 @@ namespace IcodeNet
 
         private void OnOnBuildBegin(vsBuildScope scope, vsBuildAction action)
         {
-            if (!this.Options.StopProcessesOnBuild)
+            if (!this.CleanSolutionOptionPage.StopProcessesOnBuild)
             {
                 return;
             }

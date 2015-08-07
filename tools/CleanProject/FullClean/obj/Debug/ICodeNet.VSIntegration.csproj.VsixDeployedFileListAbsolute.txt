@@ -1,11 +1,11 @@
-C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\IcodeNet.VSIntegration.dll
-C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\IcodeNet.VSIntegration.pdb
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\ICodeNet.VSIntegration.dll
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\ICodeNet.VSIntegration.pdb
 C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\CleanProject.exe
 C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\CmdLine.dll
-C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\IcodeNet.VSIntegration.pkgdef
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\ICodeNet.VSIntegration.pkgdef
 C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\extension.vsixmanifest
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\blogicode2.png
+C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\Licence.txt
 C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\Ionic.Zip.dll
 C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\CmdLine.pdb
 C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\CleanProject.pdb
-C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\Licence.txt
-C:\Users\vyront\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\ Byron Thanopoulos\IcodeNet\1.0\\blogicode2.png

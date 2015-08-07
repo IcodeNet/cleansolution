@@ -9,35 +9,29 @@ namespace IcodeNet
     [ClassInterface(ClassInterfaceType.AutoDual)]
     [CLSCompliant(false)]
     [ComVisible(true)]
-    public class OptionPage : DialogPage
+    public class CleanSolutionOptionPage : DialogPage
     {
-        [Category("OptionPage")]
+        [Category("CleanSolutionOptionPage")]
+       
         [DisplayName("Directories to clean Option")]
         [Description(@" Directories - full path e.g. 'c:\dev\Reviewer' to clean under.(can specify more than one). By Default it will start from the root of the currently open solutionn.")]
         public string[] Directories { get; set; }
 
 
-        [Category("OptionPage")]
+        [Category("CleanSolutionOptionPage")]
         [DisplayName("Exclude Directories Option")]
         [Description(" Directories to exclude  from cleanup.")]
         public string[] ExcludeDirectories { get; set; }
 
-        /// <summary>
-        ///  File types to exclude (use wildcards) - Remove Matching Files 
-        /// </summary>
-        public string[] ExcludeFiles { get; set; }
 
-
-        public bool Help { get; set; }
-
-        /// <summary>
-        /// Quiet mode - no prompts
-        /// </summary>
+        [Category("CleanSolutionOptionPage")]
+        [DisplayName("Quiet mode")]
+        [Description(@"  Quiet mode - no prompts. It will start the CleanProject exe in the background and redirect output to Viusal Studio output.")]
         public bool QuietMode { get; set; }
 
-        [Category("OptionPage")]
+        [Category("CleanSolutionOptionPage")]
         [DisplayName("Directories to remove(includes their subdirectories")]
-        [Description(@"There is a Fixed list of the folders bin, obj, TestResults, _ReSharper* to remove under the Directories specified with' Directories' Option and we can add more to the array. For Example 'Bower_Components'.
+        [Description(@"There is a Fixed list of the folders bin, obj, TestResults, to remove under the Directories specified with' Directories' Option and we can add more to the array. For Example 'Bower_Components'.
                     Note : For 'node_modules'  I am planning of publishing an update as the node_modules folders are so deeeply nested that we will need to use rimraf for the deletion.
                      I have tested this visx againsta node_modules and it works but the temp dirctory is throwing an error. So in teh mean time please use rimraf as in teh directions below.
                     =======================
@@ -53,37 +47,51 @@ namespace IcodeNet
         ")]
         public string[] RemoveDirectories { get; set; }
 
-
-        /// <summary>
-        ///  "File types to remove (use wildcards) 
-        /// </summary>
-        public List<string> RemoveFiles { get; set; }
-
-        /// <summary>
-        ///   Removes source control bindings 
-        /// </summary>
-        public bool RemoveSourceControl { get; set; }
-
-        /// <summary>
-        ///    Displays lots of messages
-        /// </summary>
+        [Category("CleanSolutionOptionPage")]
+        [DisplayName("Verbose")]
+        [Description(@"  Displays lots of messages ")]
         public bool Verbose { get; set; }
 
-        /// <summary>
-        ///   Windows Mode - Displays an output window 
-        /// </summary>
+
+        #region FUTURE Functionality
+
+
+        [Category("ToDo in the future")]
+        [DisplayName("Excluded Files")]
+        [Description(@" File types to exclude (use wildcards) - Remove Matching Files .")]
+        public string[] ExcludeFiles { get; set; }
+
+        [Category("ToDo in the future")]
+        [Description(@" Not Used.")]
+        public bool Help { get; set; }
+
+        [Category("ToDo in the future")]
+        [DisplayName("RemoveFiles")]
+        [Description(@"  File types to remove (use wildcards) ")]
+        public List<string> RemoveFiles { get; set; }
+
+
+        [Category("ToDo in the future")]
+        [DisplayName("RemoveSourceControl")]
+        [Description(@"   Removes source control bindings  ")]
+        public bool RemoveSourceControl { get; set; }
+
+
+        [Category("ToDo in the future")]
+        [DisplayName("WindowsMode")]
+        [Description(@"  Windows Mode - Displays an output window .")]
         public bool WindowsMode { get; set; }
 
-        /// <summary>
-        ///     Zip file directory 
-        /// </summary>
+
+        [Category("ToDo in the future")]
+        [DisplayName("ZipDirectory")]
+        [Description(@" Zip file directory.")]
         public string ZipDirectory { get; set; }
 
-        /// <summary>
-        ///    Copy clean and zip the project 
-        /// </summary>
+        [Category("ToDo in the future")]
+        [DisplayName("ZipProject")]
+        [Description(@" Copy clean and zip the project .")]
         public bool ZipProject { get; set; }
-
 
         [Category("Build")]
         [Description("Stop running any tasks when a (re)build is started. For instance, this can be useful when running 'watch' task from Visual Studio and executing 'npm install' when building.")]
@@ -94,6 +102,8 @@ namespace IcodeNet
             set;
         }
 
+
+        #endregion
 
     }
 }

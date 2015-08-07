@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Diagnostics;
 using System.IO;
 using EnvDTE;
 using EnvDTE80;
@@ -21,6 +22,7 @@ namespace IcodeNet.Helpers
             }
             catch (Exception exception)
             {
+                Debug.Write(exception.Message);
             }
             return null;
         }
